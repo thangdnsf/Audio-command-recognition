@@ -1,0 +1,7 @@
+matplotlib
+numpy
+scipy
+sklearn
+librosa
+noisereduce
+sckiit-plot
