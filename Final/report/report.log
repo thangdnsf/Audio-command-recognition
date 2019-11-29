@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.22)  29 NOV 2019 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.22)  29 NOV 2019 12:08
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -570,7 +570,7 @@ Sidefootvsep and sidefootheight: 12pt and 596.39996pt
 LaTeX Warning: You have requested package `report',
                but the package provides `utfprpgtex-article'.
 
-Package: utfprpgtex-article 2019/02/20 v1.1 utfprpgtex-article package
+Package: utfprpgtex-article 2019/11/29
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks24
@@ -1577,26 +1577,26 @@ File: brazilian.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 80.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 \AtBeginShipoutBox=\box47
-Package hyperref Info: Link coloring ON on input line 74.
+Package hyperref Info: Link coloring ON on input line 80.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1608,13 +1608,13 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 74.
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
+LaTeX Info: Redefining \nameref on input line 80.
+LaTeX Info: Redefining \ref on input line 80.
+LaTeX Info: Redefining \pageref on input line 80.
+LaTeX Info: Redefining \nameref on input line 80.
 \myptabbox=\box48
 \myptabboxwidth=\skip288
-LaTeX Info: Redefining \microtypecontext on input line 74.
+LaTeX Info: Redefining \microtypecontext on input line 80.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1666,13 +1666,113 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' not found.
 
 No file report.bbl.
-Package biblatex Info: Reference section=0 on input line 74.
-Package biblatex Info: Reference segment=0 on input line 74.
+Package biblatex Info: Reference section=0 on input line 80.
+Package biblatex Info: Reference segment=0 on input line 80.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\reserved@a' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\check@icl' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@fortmp' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\reserved@a' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\reserved@b' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\bibliography' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\check@icr' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\reserved@a' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\reserved@b' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\reserved@c' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\check@icr' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unskip' on input line 80.
+
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 87.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 87.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 87
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 93
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -1681,35 +1781,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 87
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 93
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 87
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 93
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 87
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 93
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 87.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 93.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1717,25 +1817,6 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 87.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 87.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 87.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 93.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -1745,17 +1826,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<./Logos/Logo_UT3.jpg, id=9, 592.1322pt x 199.4652pt>
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+<./Logos/Logo_UT3.jpg, id=7, 592.1322pt x 199.4652pt>
 File: ./Logos/Logo_UT3.jpg Graphic file (type jpg)
 <use ./Logos/Logo_UT3.jpg>
-Package pdftex.def Info: ./Logos/Logo_UT3.jpg  used on input line 114.
+Package pdftex.def Info: ./Logos/Logo_UT3.jpg  used on input line 120.
 (pdftex.def)             Requested size: 113.81102pt x 38.33705pt.
 
 Overfull \hbox (14.22638pt too wide) has occurred while \output is active
 []  
  []
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 114.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 120.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
@@ -1764,11 +1855,11 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 114.
-<./Logos/logo_FSI.jpg, id=10, 956.82469pt x 367.3725pt>
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 120.
+<./Logos/logo_FSI.jpg, id=8, 956.82469pt x 367.3725pt>
 File: ./Logos/logo_FSI.jpg Graphic file (type jpg)
 <use ./Logos/logo_FSI.jpg>
-Package pdftex.def Info: ./Logos/logo_FSI.jpg  used on input line 114.
+Package pdftex.def Info: ./Logos/logo_FSI.jpg  used on input line 120.
 (pdftex.def)             Requested size: 113.81102pt x 43.696pt.
 
 Overfull \hbox (14.22638pt too wide) has occurred while \output is active
@@ -1779,101 +1870,129 @@ Overfull \hbox (14.22638pt too wide) has occurred while \output is active
 Class memoir Warning: The material used in the headers is too large
 (48.696pt) for the given head height (45.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 114.
+(in both cases you will find help in the memoir manual). on input line 120.
 
 
 Overfull \vbox (3.696pt too high) has occurred while \output is active []
 
  [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
- <./Logos/Logo_UT3.jpg> <./Logos/logo_FSI.jpg>] [2]
+ <./Logos/Logo_UT3.jpg> <./Logos/logo_FSI.jpg>]
+
+LaTeX Warning: Reference `eq:Uxy' on page 2 undefined on input line 147.
+
+
+LaTeX Warning: Reference `eq:Uxy' on page 2 undefined on input line 147.
+
+
+LaTeX Warning: Reference `eq:Txy' on page 2 undefined on input line 147.
+
+[2]
+
+LaTeX Warning: Reference `fig:grafico' on page 3 undefined on input line 161.
+
+
+LaTeX Warning: Reference `fig:grafico' on page 3 undefined on input line 161.
+
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 159.
-<./Figuras/grafico.png, id=56, 3336.465pt x 2210.2575pt>
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 165.
+<./Figuras/grafico.png, id=46, 3336.465pt x 2210.2575pt>
 File: ./Figuras/grafico.png Graphic file (type png)
 <use ./Figuras/grafico.png>
-Package pdftex.def Info: ./Figuras/grafico.png  used on input line 161.
+Package pdftex.def Info: ./Figuras/grafico.png  used on input line 167.
 (pdftex.def)             Requested size: 241.5pt x 159.96132pt.
- [3 <./Figuras/grafico.png>]
+
+LaTeX Warning: Reference `tab:resexp' on page 3 undefined on input line 177.
+
+
+LaTeX Warning: Reference `tab:resexp' on page 3 undefined on input line 177.
+
+[3 <./Figuras/grafico.png>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 199.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 193.
-
-
-LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 19
-5.
-
-
-LaTeX Warning: Citation 'Coleman1991' on page 4 undefined on input line 196.
-
-
-LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 196.
-
-
-LaTeX Warning: Citation 'Wizentier1992' on page 4 undefined on input line 197.
-
-
-LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 197.
-
-
-LaTeX Warning: Citation 'Larsson2018' on page 4 undefined on input line 197.
-
-
-LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 19
-8.
-
-
-LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 198.
-
-
-LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 198.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 199.
 
 
 LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 20
-2.
+1.
 
 
-LaTeX Warning: Citation 'Coleman1991' on page 4 undefined on input line 203.
+LaTeX Warning: Citation 'Coleman1991' on page 4 undefined on input line 202.
 
 
-LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 203.
+LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 202.
 
 
-LaTeX Warning: Citation 'Wizentier1992' on page 4 undefined on input line 204.
+LaTeX Warning: Citation 'Wizentier1992' on page 4 undefined on input line 203.
+
+
+LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 203.
+
+
+LaTeX Warning: Citation 'Larsson2018' on page 4 undefined on input line 203.
+
+
+LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 20
+4.
+
+
+LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 204.
 
 
 LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 204.
 
 
-LaTeX Warning: Citation 'Larsson2018' on page 4 undefined on input line 204.
-
-
 LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 20
-5.
+8.
 
 
-LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 205.
+LaTeX Warning: Citation 'Coleman1991' on page 4 undefined on input line 209.
 
 
-LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 205.
+LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 209.
+
+
+LaTeX Warning: Citation 'Wizentier1992' on page 4 undefined on input line 210.
+
+
+LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 210.
+
+
+LaTeX Warning: Citation 'Larsson2018' on page 4 undefined on input line 210.
+
+
+LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 21
+1.
+
+
+LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 211.
+
+
+LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 211.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 219.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 225.
 
-LaTeX Warning: Empty bibliography on input line 231.
+LaTeX Warning: Empty bibliography on input line 237.
 
 [4]
 
 Class memoir Warning: The material used in the headers is too large
 (48.696pt) for the given head height (45.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 258.
+(in both cases you will find help in the memoir manual). on input line 264.
 
 [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 258.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 258.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 258.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 258.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 264.
 
 
 LaTeX Warning: There were undefined references.
@@ -1889,38 +2008,38 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 258.
- ) 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
+ )
+(\end occurred when \unless\ifcsname on line 80 was incomplete) 
 Here is how much of TeX's memory you used:
- 29918 strings out of 492649
- 522539 string characters out of 6129621
- 1177357 words of memory out of 5000000
- 33229 multiletter control sequences out of 15000+600000
- 603521 words of font info for 220 fonts, out of 8000000 for 9000
+ 29911 strings out of 492649
+ 522445 string characters out of 6129621
+ 1174840 words of memory out of 5000000
+ 33224 multiletter control sequences out of 15000+600000
+ 603329 words of font info for 219 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,17n,63p,10450b,4000s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
-st, replaced by a fixed one
+pdfTeX warning (
+dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a 
+fixed one
 
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
 live/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2018/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
-/public/lm/lmtt8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvet
-ic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr
-8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (6 pages, 953057 bytes).
+st/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/public/lm/lmtt8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/he
+lvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/
+uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/symbol/usyr.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (6 pages, 937719 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
+ 196 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
  35 named destinations out of 1000 (max. 500000)
- 44712 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 45224 words of extra memory for PDF output out of 51595 (max. 10000000)
 
