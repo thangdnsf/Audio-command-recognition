@@ -62,8 +62,8 @@
 
 %% Variáveis dependentes do idioma
 \iflanguage{english}{%
-  \newcommand*{\mecname}{Ministry of Education}%
-  \newcommand*{\utfprname}{Federal University of Technology --- Paraná}%
+  \newcommand*{\mecname}{}%
+  \newcommand*{\utfprname}{Paul Sabatier University}%
   \newcommand*{\sourcename}{Source}%
   \IfFileExists{english-abnt.lbx}{%
     \typeout{biblatex-abnt warning: using default language file `english-abnt.lbx'}%
@@ -72,8 +72,8 @@
     \DeclareLanguageMapping{english}{abnt-english}%
   }%
 }{%
-  \newcommand*{\mecname}{Ministério da Educação}%
-  \newcommand*{\utfprname}{Universidade Tecnológica Federal do Paraná}%
+  \newcommand*{\mecname}{Université Paul Sabatier}%
+  \newcommand*{\utfprname}{Faculté des sciences et d'ingénierie}%
   \newcommand*{\sourcename}{Fonte}%
 }
 
@@ -137,7 +137,7 @@
 %% Cabeçalhos e rodapés
 \newcommand*{\lutfprtitleheader}{%
   \begin{minipage}[c][][c]{35mm}%
-    \flushleft\includegraphics[width = 30mm]{./Logos/logo-utfpr}%
+    \flushleft\includegraphics[width = 40mm]{./Logos/Logo_UT3.jpg}%
   \end{minipage}%
 }
 \newcommand*{\cutfprtitleheader}{%
@@ -151,7 +151,7 @@
 }
 \newcommand*{\rutfprtitleheader}{%
   \begin{minipage}[c][][c]{35mm}%
-    \arg@ifnotempty{\deptlogo}{\flushright\includegraphics[width = 30mm]{./Logos/\deptlogo}}%
+    \arg@ifnotempty{\deptlogo}{\flushright\includegraphics[width = 40mm]{./Logos/logo_FSI.jpg}}%
   \end{minipage}%
 }
 \newcommand*{\utfprheadrule}{%

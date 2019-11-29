@@ -22,7 +22,7 @@
 %% em <http://www.abntex.net.br/>.
 
 %% Passagem de opções para pacotes
-\PassOptionsToPackage{english, main = brazilian}{babel}%% Suporte multilíngue
+\PassOptionsToPackage{english, main = english}{babel}%% Suporte multilíngue
 
 %% Classe e opções de documento
 \documentclass[%% Opções
@@ -42,30 +42,29 @@
 ]{abntex2}
 
 %% Pacotes utilizados
-\usepackage{utfprpgtex-article}%% Estilos do modelo
+\usepackage{report}%% Estilos do modelo
 \usepackage{lipsum}%% Geração de texto fictício
 
 %% Arquivo de referências
-\addbibresource{utfprpgtex-article.bib}
+\addbibresource{report.bib}
 
 %% Informações do documento
 \titulo{%% Título
-  TÍTULO DO TRABALHO ACADÊMICO (ARTIGO OU PROJETO)%
+  Scientific Computing - Practice sessions%
 }
 \tituloemoutroidioma{%% Título em outro idioma
-  TITLE OF ACADEMIC WORK (ARTICLE OR PROJECT)%
+  Audio command recognition by DTW and classification%
 }
 \autor{%% Autor(es) e e-mail(s)
-  Primeiro(a) Autor(a)\thanks{\email{autor1@dominio}, Curso de <Nome do Curso>.}\\%
-  Segundo(a) Autor(a)\thanks{\email{autor2@dominio}, Curso de <Nome do Curso>.}\\%
-  Terceiro(a) Autor(a)\thanks{\email{autor3@dominio}, Curso de <Nome do Curso>.}%
+  Duc Thang NGUYEN\thanks{21906085, \email{duc-thang.nguyen@univ-tlse3.fr}.}\\%
+  Clement POULL\thanks{21902771, \email{clement.poull@univ-tlse3.fr}.}\\%
 }
 \instituicao{\utfprname}%% Instituição --- Automático
-\campus{PG}{Câmpus Ponta Grossa}%% Câmpus: {sigla} e {nome}
-\departamento[logo-da]{<DEPTO>}{%% Depto., Coord., Prog. ou Curso: [logo], {sigla} e {nome}
-  Departamento Acadêmico de <Nome do Depto.>%
+%\campus{PG}{}%% Câmpus: {sigla} e {nome}
+\departamento[logo_FSI.jpg]{<DEPTO>}{%% Depto., Coord., Prog. ou Curso: [logo], {sigla} e {nome}
+  Faculty of Science and Engineering%
 }
-\local{Ponta Grossa, Paraná, Brasil}%% Local
+%\local{Ponta Grossa, Paraná, Brasil}%% Local
 \data{}%% Data --- Comente para gerar a data atual
 
 %% Ferramenta para criação de índices
@@ -78,11 +77,6 @@
 
 \begin{paginadetitulo}%% Página de título
 
-\begin{ambienteresumo}%% Resumo
-O texto do resumo deve situar o trabalho no contexto geral e a importância do tema estudado, descrever de forma breve os objetivos, a metodologia adotada, os resultados obtidos e as principais conclusões, relatando a contribuição própria, em não mais de 250 palavras. Não deve conter nem fórmulas ou deduções matemáticas e nem citações bibliográficas.
-\palavraschave{palavra 1. palavra 2. palavra 3\dots{} (no máximo 5).}%% Palavras-chave
-\end{ambienteresumo}
-
 \begin{ambienteresumo}[Abstract]%% Abstract
 \begin{otherlanguage*}{english}%% Idioma do abstract
 The abstract text should place the work in the general context and the importance of the topic studied, briefly describe the objectives, the methodology adopted, the results obtained and the main conclusions, reporting the own contribution, in no more than 250 words. It should contain neither mathematical formulas nor deductions nor bibliographical citations.
@@ -94,7 +88,7 @@ The abstract text should place the work in the general context and the importanc
 
 \textual%% Elementos textuais
 
-\section{Introdução}\label{sec:intro}
+\section{Introduction}\label{sec:intro}
 
 O texto desta seção deve contextualizar o tema a ser analisado e/ou desenvolvido no trabalho, definindo o problema e sua importância, apresentando uma breve revisão teórica e/ou bibliográfica\footnote{As referências podem ser encontradas em <\url{http://www.periodicos.capes.gov.br/}> e/ou <\url{http://scholar.google.com.br/}>.} (breve descrição dos trabalhos mais relevantes que estão relacionados ao tema apresentando suas principais contribuições) e, finalmente, apresentando as considerações adotadas e objetivos (contribuições referentes ao trabalho proposto com base na revisão da literatura apresentada).
 
@@ -110,7 +104,7 @@ A metodologia teórica (analítico e/ou numérico) deve apresentar: a descriçã
 
 A metodologia experimental deve apresentar: a descrição do aparato experimental (desenhos esquemáticos; fotos; etc.); a descrição do(s) instrumento(s) de medição (faixa(s) de operação e incerteza(s)); descrição do(s) procedimento(s) para execução do experimento, de medição e dos cálculos necessários.
 
-\section{Resultados}\label{sec:res}
+\section{Result}\label{sec:res}
 
 O texto desta seção deve descrever detalhadamente os dados e/ou resultados obtidos pelo autor, que normalmente são apresentados na forma de quadros, tabelas, gráficos, etc. Deve ser efetuada a comparação dos dados obtidos e/ou resultados, com aqueles descritos na revisão de literatura, incluindo os comentários sobre os estudos de outros autores.
 
