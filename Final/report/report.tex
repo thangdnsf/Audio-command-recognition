@@ -115,6 +115,21 @@ The final goal is to recognize these isolated instructions given in our voice as
 
 The dataset we had access to was composed of sets of the 13 instructions spoken by different persons in different conditions.
 It can be divided into three categories: 4 sets where voices of males with a high level of noise, 13 sets where voices of males with no noise and 5 sets where voices of females with no noise.
+Each sample is isolated but not reduced to only the instruction, so we need to cut the empty parts of the sample, as shown by the two following figures.
+
+\begin{figure}[H]
+  \centering
+  \caption{Sample before trimming.}
+  \label{fig:sample_1}
+  \includegraphics[width = 0.5\columnwidth]{./Figuras/sample_1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Sample after trimming.}
+  \label{fig:sample_2}
+  \includegraphics[width = 0.5\columnwidth]{./Figuras/sample_2}
+\end{figure}
 
 \subsection{DTW and MFCC}
 
@@ -127,8 +142,26 @@ This algorithm centers on calculating the similarities between the two sequences
 It works by matching every elements of a "training" sequnce against every elements of a "test" sequence, with restrictions.
 The first element of the training sequence is matched with the first element of the test sequence, and the last element of the training sequence is matched with the last element of the test sequence.
 Furthermore, if the element $i$ of the training sequence is matched with the element $j$ of the test sequence, then the element $j + 1$ must be matched with either $i$ or $i + 1$.
+Illustrated by \autoref{fig:dtw_1} is the warping between two linear sequences.
+
+\begin{figure}[H]
+  \centering
+  \caption{Warping between two time series.}
+  \label{fig:dtw_1}
+  \includegraphics[width = 0.5\columnwidth]{./Figuras/dtw_1}
+  \fonte{Florida Institute of Technology}
+\end{figure}
+
 After all elements have been matched, the algorithm allows for a difference coefficient between the two sequences to be calculated.
-This coefficient will be closer to 0 for a test sequence closer to the training sequence.
+This coefficient will be closer to 0 for a test sequence closer to the training sequence, and is calculated with the value of the last element of the matrix.
+In \autoref{fig:dtw_2}, said coefficient would be calculated based on the value of the top right corner cell.
+
+\begin{figure}[H]
+  \centering
+  \caption{Comparison matrix with recognition path}
+  \label{fig:dtw_2}
+  \includegraphics[width = 0.5\columnwidth]{./Figuras/dtw_2}
+\end{figure}
 
 \begin{algorithm}
   \caption{DTW algorithm}\label{euclid}
@@ -155,6 +188,14 @@ In order to do that, we use the MFCC.
 The mel-frequency cepstral coefficients is a frequency warping method that allows for a better representation of the response the human earing has, since it does not follow a linear scale.
 It calculates coefficients by performing a Fourier transform, maping the result to the mel scale, taking the logs of the powers at certain frequencies, taking the discrete cosine transform of the logs and getting the amplitudes of the resulting spectrum.
 
+\begin{figure}[H]
+  \centering
+  \caption{Link between amplitude and mel frequency}
+  \label{fig:mfcc}
+  \includegraphics[width = 0.5\columnwidth]{./Figuras/mfcc}
+  \fonte{University of Florida}
+\end{figure}
+
 \subsection{PCA and KNN}
 
 The second part of our recognition method is to use the principal component analysis (PCA) in order to preprocess our sequences, before classification with the KNN algorithm.
@@ -164,6 +205,14 @@ The second part of our recognition method is to use the principal component anal
 Principal component analysis is a method that allows to reduce the size of a set by transforming it into a set of linearly uncorrelated variable.
 It works by calculating the covariance matrix of the sequence, then by calculating the eigenvalues and eigenvectors of this matrix, choosing a subset of these eigenvectors and projecting the dataset onto a new basis created by the chosen eigenvectors.
 
+\begin{figure}[H]
+  \centering
+  \caption{PCA in the euclidian plane.}
+  \label{fig:pca}
+  \includegraphics[width = 0.5\columnwidth]{./Figuras/pca}
+  \fonte{Wikipedia}
+\end{figure}
+
 \subsection{KNN}
 
 K-nearest neighbors is an algorithm used for classification of data.
@@ -171,6 +220,13 @@ It works by having a training base, on which is placed a test sample.
 The training base is composed of vectors with each an associated label, the label on these training vectors represents a class.
 We then check the neighborhood of the test sample, and take its k closest neighbors.
 These neighbors are then used to classify the test sample, with techniques such as majority voting, or weighted majority voting.
+
+\begin{figure}[H]
+  \centering
+  \caption{KNN with two classes.}
+  \label{fig:knn}
+  \includegraphics[width = 0.5\columnwidth]{./Figuras/knn}
+\end{figure}
 
 \section{Result}\label{sec:res}
 
