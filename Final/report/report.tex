@@ -27,7 +27,7 @@
 %% Classe e opções de documento
 \documentclass[%% Opções
 %%%% Opções da classe memoir
-  article,%% Tipo de documento: article, book, report, etc.
+  report,%% Tipo de documento: article, book, report, etc.
   10pt,%% Tamanho de fonte: 10pt, 11pt, 12pt, etc.
   a4paper,%% Tamanho de papel: a4paper, letterpaper, etc.
   fleqn,%% Alinhamento de equações à esquerda (comente para centralizado)
@@ -44,6 +44,8 @@
 %% Pacotes utilizados
 \usepackage{report}%% Estilos do modelo
 \usepackage{lipsum}%% Geração de texto fictício
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 
 %% Arquivo de referências
 \addbibresource{report.bib}
@@ -85,8 +87,10 @@
 
 \begin{ambienteresumo}[Abstract]%% Abstract
 \begin{otherlanguage*}{english}%% Idioma do abstract
-The abstract text should place the work in the general context and the importance of the topic studied, briefly describe the objectives, the methodology adopted, the results obtained and the main conclusions, reporting the own contribution, in no more than 250 words. It should contain neither mathematical formulas nor deductions nor bibliographical citations.
-\palavraschave[Keywords]{word 1. word 2. word 3\dots{} (maximum 5).}%% Keywords
+Speech recognition can be used in many fields, including command recognition for voice drone control.
+One method that is commonly used for speech recognition is the dynamic time warping (DTW) algorithm. An advantage of this method is that it yields good results without the need for a very large dataset.
+Other techniques can be used beside in order to do speech recognition, such methods include principal component analysis (PCA) together with k-nearest neighbors (KNN).
+\palavraschave[Keywords]{DTW. PCA. KNN. MFCC. Speech Recognition}%% Keywords
 \end{otherlanguage*}
 \end{ambienteresumo}
 
@@ -96,19 +100,77 @@ The abstract text should place the work in the general context and the importanc
 
 \section{Introduction}\label{sec:intro}
 
-O texto desta seção deve contextualizar o tema a ser analisado e/ou desenvolvido no trabalho, definindo o problema e sua importância, apresentando uma breve revisão teórica e/ou bibliográfica\footnote{As referências podem ser encontradas em <\url{http://www.periodicos.capes.gov.br/}> e/ou <\url{http://scholar.google.com.br/}>.} (breve descrição dos trabalhos mais relevantes que estão relacionados ao tema apresentando suas principais contribuições) e, finalmente, apresentando as considerações adotadas e objetivos (contribuições referentes ao trabalho proposto com base na revisão da literatura apresentada).
+Speech recognition is the translation of spoken language into text by a computer.
+This field has applications in many domains, including, but not limited to, health care, military, and telephony.
+In our case, it will be used to give voice commands for controlling a drone.
+Unlike direct control methods such as a menu, speech recognition is not trivial and is not always flawless.
+The computer has no way to directly execute what the speech represents but needs to interpret the voice before execution.
+This can prove troublesome when the sample has noise, inconsistent speed, volume and many more parameters that can degrade their quality.
+As a result, we need a way to accurately interpret the voice commands as one of 13 instructions for controlling a drone: \textit{arretetoi}, \textit{atterrissage}, \textit{avance}, \textit{decollage}, \textit{droite}, \textit{etatdurgence}, \textit{faisunflip}, \textit{gauche}, \textit{plusbas}, \textit{plushaut}, \textit{recule}, \textit{tournedroite}, \textit{tournegauche}.
+The final goal is to recognize these isolated instructions given in our voice as accurately as possible and compare the results of the DTW algorithm with PCA preprocessing and KNN classification.
 
 \section{Metodologia}\label{sec:met}
 
-O texto desta seção deve apresentar o desenvolvimento do tema, descrevendo o(s) método(s) de análise (teórico e/ou experimental) utilizado(s) para a obtenção dos resultados no desenvolvimento da pesquisa para que a mesma possa ser reconstituída.
+\subsection{Dataset}
 
-\subsection{Teórica}\label{ssec:teor}
+The dataset we had access to was composed of sets of the 13 instructions spoken by different persons in different conditions.
+It can be divided into three categories: 4 sets where voices of males with a high level of noise, 13 sets where voices of males with no noise and 5 sets where voices of females with no noise.
 
-A metodologia teórica (analítico e/ou numérico) deve apresentar: a descrição, a configuração e as hipóteses do problema (permanente ou transiente; 1D, 2D ou 3D; etc.); as equações governantes, as condições de contorno e os modelos utilizados (apresentar referências da literatura para equações e modelos, quando pertinente); o método de solução e a malha computacional (descrever programas e/ou ferramentas utilizadas e/ou códigos desenvolvidos); o método de análise e/ou comparação dos resultados (desvios absolutos e/ou relativos; RMS; etc.).
+\subsection{DTW and MFCC}
 
-\subsection{Experimental}\label{ssec:exp}
+The first part our recognition method uses the dynamic time warping (DTW) algorithm on the mel-frequency cepstral coefficients (MFCCs) of each samples.
 
-A metodologia experimental deve apresentar: a descrição do aparato experimental (desenhos esquemáticos; fotos; etc.); a descrição do(s) instrumento(s) de medição (faixa(s) de operação e incerteza(s)); descrição do(s) procedimento(s) para execução do experimento, de medição e dos cálculos necessários.
+\subsubsection{DTW}
+
+The dynamic time warping algorithm is a popular method for comparing two linear sequences.
+This algorithm centers on calculating the similarities between the two sequences, which is exactly what is wanted for speech recognition.
+It works by matching every elements of a "training" sequnce against every elements of a "test" sequence, with restrictions.
+The first element of the training sequence is matched with the first element of the test sequence, and the last element of the training sequence is matched with the last element of the test sequence.
+Furthermore, if the element $i$ of the training sequence is matched with the element $j$ of the test sequence, then the element $j + 1$ must be matched with either $i$ or $i + 1$.
+After all elements have been matched, the algorithm allows for a difference coefficient between the two sequences to be calculated.
+This coefficient will be closer to 0 for a test sequence closer to the training sequence.
+
+\begin{algorithm}
+  \caption{DTW algorithm}\label{euclid}
+  \begin{algorithmic}
+    \State $g(0, 0) \gets 0$
+    \For {$j \gets 1 \textit{ to } J$}
+    \State $g(0, j) \gets +\infty$
+    \EndFor
+    \For {$i \gets 1 \textit{ to } I$}
+    \State $g(i, 0) \gets +\infty$
+    \For {$j \gets 1 \textit{ to } J$}
+    \State $g(i, j) \gets min(g(i - 1, j) + \omega_{0} * d(i, j), g(i - 1, j - 1) + \omega_{1} * d(i, j), g(i, j - 1) + \omega_{2} * d(i, j))$
+    \EndFor
+    \EndFor
+    \State $D \gets g(I, J) / (I + J)$
+  \end{algorithmic}
+\end{algorithm}
+
+This algorithm requires a way to calculate the distance between two elements of a linear sequence.
+In order to do that, we use the MFCC.
+
+\subsubsection{MFCC}
+
+The mel-frequency cepstral coefficients is a frequency warping method that allows for a better representation of the response the human earing has, since it does not follow a linear scale.
+It calculates coefficients by performing a Fourier transform, maping the result to the mel scale, taking the logs of the powers at certain frequencies, taking the discrete cosine transform of the logs and getting the amplitudes of the resulting spectrum.
+
+\subsection{PCA and KNN}
+
+The second part of our recognition method is to use the principal component analysis (PCA) in order to preprocess our sequences, before classification with the KNN algorithm.
+
+\subsection{PCA}
+
+Principal component analysis is a method that allows to reduce the size of a set by transforming it into a set of linearly uncorrelated variable.
+It works by calculating the covariance matrix of the sequence, then by calculating the eigenvalues and eigenvectors of this matrix, choosing a subset of these eigenvectors and projecting the dataset onto a new basis created by the chosen eigenvectors.
+
+\subsection{KNN}
+
+K-nearest neighbors is an algorithm used for classification of data.
+It works by having a training base, on which is placed a test sample.
+The training base is composed of vectors with each an associated label, the label on these training vectors represents a class.
+We then check the neighborhood of the test sample, and take its k closest neighbors.
+These neighbors are then used to classify the test sample, with techniques such as majority voting, or weighted majority voting.
 
 \section{Result}\label{sec:res}
 
