@@ -12,7 +12,7 @@
 %%%% Opções da classe abntex2
   sumario = tradicional,%% Estilo de sumário: tradicional (padrão) ou abnt-6027-2012 (ABNT NBR 6027-2012)
   chapter = TITLE,%% Títulos de capítulos em maiúsculas (comente para desabilitar)
-  section = TITLE,%% Títulos de seções secundárias em maiúsculas (comente para desabilitar)
+  section = TITLE,%% T\cite{ítulos de seções secundárias em maiúsculas (comente para desabilitar)
   % subsection = TITLE,%% Títulos de seções terciárias em maiúsculas (comente para desabilitar)
   % subsubsection = TITLE,%% Títulos de seções quartenárias em maiúsculas (comente para desabilitar)
 ]{abntex2}
@@ -49,7 +49,7 @@
   Faculty of Science and Engineering%
 }
 %\local{Ponta Grossa, Paraná, Brasil}%% Local
-\data{}%% Data --- Comente para gerar a data atual
+%\data{}%% Data --- Comente para gerar a data atual
 
 %% Ferramenta para criação de índices
 \makeindex
@@ -63,8 +63,13 @@
 
 \begin{ambienteresumo}[Abstract]%% Abstract
 \begin{otherlanguage*}{english}%% Idioma do abstract
-Speech recognition can be used in many fields, including command recognition for voice drone control. The state of the arts methods for spoken word recognition often base on MFCCs (Mel Frequency Cepstral Coefficients) to extract feature of audio. In this report, We present some approaches to classify the 13 drone commands in French. Firstly, We use dynamic time warping (DTW) algorithm. Second approach, using Principal Component Analysis (PCA) to get feature data reduction of MFCC and then apply k-nearest neighbors (KNN) to classify them. A upgrade of this approach, we combine MFCC and Delta Coefficients to get more features about sound and frame signals change. And finally, we use Convolution neural networks (CNN) into MFCCs directly. The dataset is composed of  235 records without noise and 53 records with noise from 13 native speakers. We use 80\% of our dataset to train model, 20\% dataset to test and measure the accuracy of approache. During training, we augment data to variety of situations dataset like pitch, shift, stretch, ignore noise,\dots The best results base on F1 score, when we use DTW is 86\%, PCA + KNN is 94\% and CNN is 89\%. We also evaluate independently on own dataset (50 files) from native accent and Vietnamnese accent with DTW is 80\%, PCA + KNN is 87\% and CNN is 80\%.
+Speech recognition can be used in many fields, including command recognition for voice drone control. The state of the arts methods for spoken word recognition often base on MFCCs (Mel Frequency Cepstral Coefficients) to extract feature of audio. In this report, we present some approaches to classify the 13 drone commands in French. Firstly, We use dynamic time warping (DTW) algorithm. Second approach, using Principal Component Analysis (PCA) to get feature data reduction of MFCC and then apply k-nearest neighbors (KNN) to classify them. A upgrade of this approach, we combine MFCC and Delta Coefficients to get more features about sound and frame signals change. And finally, we use Convolution neural networks (CNN) into MFCCs directly. The dataset is composed of  235 records without noise and 53 records with noise from 13 native speakers. We use 80\% of our dataset to train model, 20\% dataset to test and measure the accuracy of approaches. During training, we augment data to variety of situations dataset like pitch, shift, stretch, ignore noise,\dots The best results base on F1 score, when we use DTW is 83\%, PCA + KNN is 91\% and CNN is 89\%. We also evaluate independently on own dataset (\~ 40 files) from native accent and Vietnamnese accent with DTW is 79\%, PCA + KNN is 95\% and CNN is 79\%.
+
+\smallskip
+
+\textbf{Source code:} https://github.com/thangdnsf/Audio-command-recognition
 \palavraschave[Keywords]{DTW, PCA, KNN, MFCC, delta coef, CNN, Speech Recognition}%% Keywords
+
 \end{otherlanguage*}
 \end{ambienteresumo}
 
@@ -166,7 +171,7 @@ The Dynamic time warping (DTW) algorithm is showed in Algorithm\ref{euclid} is a
   \label{fig:dtw_1}
 \end{figure}\footnotetext{Florida Institute of Technology}
 
-And Figure \ref{fig:dtwmfcc} illustrates the comparison of two MFCCs using DTW.
+And Figure \ref{fig:dtwmfcc} illustrates the comparison of two MFCCs using DTW \cite{1163055}.
 
 \begin{figure*}
 \centering
@@ -209,7 +214,7 @@ The first part our recognition method uses the dynamic time warping (DTW) algori
 \end{algorithm}
 
 \subsection{PCA and KNN}
-The second approach of our recognition method is to apply the principal component analysis (PCA) on our dataset, before classification with the KNN algorithm. PCA is a method that allows to reduce the size of a set by transforming it into a set of linearly uncorrelated variable. It works by calculating the covariance matrix of the sequence, then by calculating the eigenvalues and eigenvectors of this matrix, choosing a subset of these eigenvectors and projecting the dataset onto a new basis created by the chosen eigenvectors. Note that, we need to fix size of all data by padding zeros vector to two slide of each MFCC Figure \ref{fig:mfccpadding} and flatten each MFCC to vector. and Then rescaling our data to a range between -1 and 1, with StandardScaler method from sklearn. 
+The second approach of our recognition method is to apply the principal component analysis (PCA) on our dataset, before classification with the KNN algorithm. PCA is a method that allows to reduce the size of a set by transforming it into a set of linearly uncorrelated variable. It works by calculating the covariance matrix of the sequence, then by calculating the eigenvalues and eigenvectors of this matrix, choosing a subset of these eigenvectors and projecting the dataset onto a new basis created by the chosen eigenvectors\cite{8538414}. Note that, we need to fix size of all data by padding zeros vector to two slide of each MFCC Figure \ref{fig:mfccpadding} and flatten each MFCC to vector. and Then rescaling our data to a range between -1 and 1, with StandardScaler method from sklearn. 
 
 \begin{figure}[H]
   \centering
@@ -304,7 +309,7 @@ And then, we have evaluated performance of DTW algorithm with the following case
 \end{minipage}
 \end{figure*}
 \subsection{PCA and KNN}
-We have augmented dataset by changing pitch with Frequency (+15\%,+25\%,+50\%,-15\%,-25\%,-50\%). Which permits dataset is better make our model to do not depend on accent and reduce noise. In here, we implement following upgrade version: using delta and delta 2 of MFCC as Figure \ref{fig:pcs}.
+We have augmented dataset by changing pitch with Frequency (+15\%,+25\%,+50\%,-15\%,-25\%,-50\%). Which permits dataset is better make our model to do not depend on accent and reduce noise. In here, we implement following upgrade version: using delta and delta 2 of MFCC as Figure \ref{fig:pcs}\cite{8538414}.
 
 \begin{figure}[H]
   \centering
@@ -334,9 +339,58 @@ And we have got best results on test data is 93\% as Figure \ref{fig:knnall} and
 \end{figure*}
 
 \subsection{CNN}
-We have tried to train Deep Neural network model - CNN. Figure \ref
-\section{conclusions}
+We have tried to train Deep Neural network model - CNN. Figure \ref{fig:cnnarch} present architecture CNN model with $14,301$ parameters. And Figure \ref{fig:losscnn} and \ref{fig:accloss} show the loss and accuracy after 6000 epoches.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.7\columnwidth]{./Figuras/cnnarch}
+   \caption{The CNN architecture model}
+   \label{fig:cnnarch}
+\end{figure}
 
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/losscnn}
+  \caption{The loss and accuracy during training model.}
+  \label{fig:losscnn}
+\end{figure}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/acccnn}
+   \caption{The loss and accuracy of test set.}
+   \label{fig:acccnn}
+\end{figure}
+\end{minipage}
+\end{figure*}
+
+And we have got good results on test data is 91\% as Figure \ref{fig:cnnall} and 79\% on own data as Figure \ref{fig:cnnown}.
+
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/cnnall}
+  \caption{Evaluating CNN model normal (ramdom noise and without noise) data}
+  \label{fig:cnnall}
+\end{figure}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/cnnown}
+   \caption{Evaluating CNN ability to new voice}
+   \label{fig:cnnown}
+\end{figure}
+\end{minipage}
+\end{figure*}
+
+\section{conclusions}
+The primary objective, we have successfully implemented DTW algorithm, PCA, KNN and CNN methods and get good results. We see that, data augmentation make better accuracy and combining MFCC + del + del2 and PCA + KNN has best results. Although, using DTW on data augmentation is more expensive, I think it's a simple and good result.
 
 \printbibliography%% Referências
 
