@@ -1,6 +1,7 @@
 # Audio-command-recognition
 Audio command recognition by DTW and classification methods
-Author:
+This is a scientific computing project at Paul Sabatier University.
+### Author:
 - Thang Nguyen
 - Clement Poull
 ### Abstract
