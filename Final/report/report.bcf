@@ -2057,24 +2057,6 @@
     <bcf:datasource type="file" datatype="bibtex">report.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">VanEkenstein1997</bcf:citekey>
-    <bcf:citekey order="2">Coleman1991</bcf:citekey>
-    <bcf:citekey order="2">Nriagu1988</bcf:citekey>
-    <bcf:citekey order="3">Wizentier1992</bcf:citekey>
-    <bcf:citekey order="3">Faina2000</bcf:citekey>
-    <bcf:citekey order="3">Larsson2018</bcf:citekey>
-    <bcf:citekey order="4">VanEkenstein1997</bcf:citekey>
-    <bcf:citekey order="4">Nriagu1988</bcf:citekey>
-    <bcf:citekey order="4">Faina2000</bcf:citekey>
-    <bcf:citekey order="5">VanEkenstein1997</bcf:citekey>
-    <bcf:citekey order="7">Coleman1991</bcf:citekey>
-    <bcf:citekey order="7">Nriagu1988</bcf:citekey>
-    <bcf:citekey order="9">Wizentier1992</bcf:citekey>
-    <bcf:citekey order="9">Faina2000</bcf:citekey>
-    <bcf:citekey order="9">Larsson2018</bcf:citekey>
-    <bcf:citekey order="11">VanEkenstein1997</bcf:citekey>
-    <bcf:citekey order="11">Nriagu1988</bcf:citekey>
-    <bcf:citekey order="11">Faina2000</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

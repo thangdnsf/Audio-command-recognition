@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.22)  29 NOV 2019 12:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.22)  6 DEC 2019 21:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1460,6 +1460,41 @@ Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 254
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count468
 )
+(/usr/local/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count469
+\float@exts=\toks34
+\float@box=\box47
+\@float@everytoks=\toks35
+\@floatcapt=\box48
+)
+\@float@every@algorithm=\toks36
+\c@algorithm=\count470
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count471
+\c@ALG@rem=\count472
+\c@ALG@nested=\count473
+\ALG@tlm=\skip288
+\ALG@thistlm=\skip289
+\c@ALG@Lnr=\count474
+\c@ALG@blocknr=\count475
+\c@ALG@storecount=\count476
+\c@ALG@tmpcounter=\count477
+\ALG@tmplength=\skip290
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
 \report@idxfile=\write6
 \openout6 = `report.idx'.
 
@@ -1577,26 +1612,26 @@ File: brazilian.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 58.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-\AtBeginShipoutBox=\box47
-Package hyperref Info: Link coloring ON on input line 80.
+\AtBeginShipoutBox=\box49
+Package hyperref Info: Link coloring ON on input line 58.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1604,17 +1639,17 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count469
+\c@section@level=\count478
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 80.
-LaTeX Info: Redefining \ref on input line 80.
-LaTeX Info: Redefining \pageref on input line 80.
-LaTeX Info: Redefining \nameref on input line 80.
-\myptabbox=\box48
-\myptabboxwidth=\skip288
-LaTeX Info: Redefining \microtypecontext on input line 80.
+LaTeX Info: Redefining \nameref on input line 58.
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
+\myptabbox=\box50
+\myptabboxwidth=\skip291
+LaTeX Info: Redefining \microtypecontext on input line 58.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1629,17 +1664,17 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count470
+\scratchcounter=\count479
 \scratchdimen=\dimen261
-\scratchbox=\box49
-\nofMPsegments=\count471
-\nofMParguments=\count472
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count473
+\scratchbox=\box51
+\nofMPsegments=\count480
+\nofMParguments=\count481
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count482
 \MPscratchDim=\dimen262
-\MPnumerator=\count474
-\makeMPintoPDFobject=\count475
-\everyMPtoPDFconversion=\toks35
+\MPnumerator=\count483
+\makeMPintoPDFobject=\count484
+\everyMPtoPDFconversion=\toks38
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1666,113 +1701,113 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' not found.
 
 No file report.bbl.
-Package biblatex Info: Reference section=0 on input line 80.
-Package biblatex Info: Reference segment=0 on input line 80.
+Package biblatex Info: Reference section=0 on input line 58.
+Package biblatex Info: Reference segment=0 on input line 58.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 80.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\reserved@a' on input line 80.
+(hyperref)                removing `\<def>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 80.
+(hyperref)                removing `\reserved@a' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\check@icl' on input line 80.
+(hyperref)                removing `\<let>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 80.
+(hyperref)                removing `\check@icl' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 80.
+(hyperref)                removing `\<let>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 80.
+(hyperref)                removing `\let' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@fortmp' on input line 80.
+(hyperref)                removing `\<def>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 80.
+(hyperref)                removing `\@fortmp' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\reserved@a' on input line 80.
+(hyperref)                removing `\<def>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 80.
+(hyperref)                removing `\reserved@a' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\reserved@b' on input line 80.
+(hyperref)                removing `\<let>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 80.
+(hyperref)                removing `\reserved@b' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\bibliography' on input line 80.
+(hyperref)                removing `\<def>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 80.
+(hyperref)                removing `\bibliography' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\check@icr' on input line 80.
+(hyperref)                removing `\<def>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 80.
+(hyperref)                removing `\check@icr' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\reserved@a' on input line 80.
+(hyperref)                removing `\<def>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 80.
+(hyperref)                removing `\reserved@a' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\reserved@b' on input line 80.
+(hyperref)                removing `\<def>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 80.
+(hyperref)                removing `\reserved@b' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\reserved@c' on input line 80.
+(hyperref)                removing `\<def>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 80.
+(hyperref)                removing `\reserved@c' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\check@icr' on input line 80.
+(hyperref)                removing `\<let>-command' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unskip' on input line 80.
+(hyperref)                removing `\check@icr' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unskip' on input line 58.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 93
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 71.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 71
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -1781,35 +1816,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 93
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 71
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 93
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 71
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 93
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 71
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 71.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1817,7 +1852,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 93.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 71.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1827,26 +1862,31 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
-<./Logos/Logo_UT3.jpg, id=7, 592.1322pt x 199.4652pt>
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 71.
+<./Figuras/sample_1.png, id=6, 1148.29pt x 281.05pt>
+File: ./Figuras/sample_1.png Graphic file (type png)
+<use ./Figuras/sample_1.png>
+Package pdftex.def Info: ./Figuras/sample_1.png  used on input line 100.
+(pdftex.def)             Requested size: 386.40147pt x 94.57367pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 101.
+<./Logos/Logo_UT3.jpg, id=8, 592.1322pt x 199.4652pt>
 File: ./Logos/Logo_UT3.jpg Graphic file (type jpg)
 <use ./Logos/Logo_UT3.jpg>
-Package pdftex.def Info: ./Logos/Logo_UT3.jpg  used on input line 120.
+Package pdftex.def Info: ./Logos/Logo_UT3.jpg  used on input line 103.
 (pdftex.def)             Requested size: 113.81102pt x 38.33705pt.
 
 Overfull \hbox (14.22638pt too wide) has occurred while \output is active
 []  
  []
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 120.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 103.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
@@ -1855,11 +1895,11 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 120.
-<./Logos/logo_FSI.jpg, id=8, 956.82469pt x 367.3725pt>
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 103.
+<./Logos/logo_FSI.jpg, id=9, 956.82469pt x 367.3725pt>
 File: ./Logos/logo_FSI.jpg Graphic file (type jpg)
 <use ./Logos/logo_FSI.jpg>
-Package pdftex.def Info: ./Logos/logo_FSI.jpg  used on input line 120.
+Package pdftex.def Info: ./Logos/logo_FSI.jpg  used on input line 103.
 (pdftex.def)             Requested size: 113.81102pt x 43.696pt.
 
 Overfull \hbox (14.22638pt too wide) has occurred while \output is active
@@ -1870,7 +1910,7 @@ Overfull \hbox (14.22638pt too wide) has occurred while \output is active
 Class memoir Warning: The material used in the headers is too large
 (48.696pt) for the given head height (45.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 120.
+(in both cases you will find help in the memoir manual). on input line 103.
 
 
 Overfull \vbox (3.696pt too high) has occurred while \output is active []
@@ -1878,150 +1918,273 @@ Overfull \vbox (3.696pt too high) has occurred while \output is active []
  [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./Logos/Logo_UT3.jpg> <./Logos/logo_FSI.jpg>]
+<./Figuras/sample_2.png, id=27, 1148.29pt x 281.05pt>
+File: ./Figuras/sample_2.png Graphic file (type png)
+<use ./Figuras/sample_2.png>
+Package pdftex.def Info: ./Figuras/sample_2.png  used on input line 107.
+(pdftex.def)             Requested size: 386.40147pt x 94.57367pt.
+<./Figuras/sample_3.png, id=29, 1148.29pt x 281.05pt>
+File: ./Figuras/sample_3.png Graphic file (type png)
+<use ./Figuras/sample_3.png>
+Package pdftex.def Info: ./Figuras/sample_3.png  used on input line 115.
+(pdftex.def)             Requested size: 386.40147pt x 94.57367pt.
+<./Figuras/mfcc.png, id=31, 1049.9225pt x 353.32pt>
+File: ./Figuras/mfcc.png Graphic file (type png)
+<use ./Figuras/mfcc.png>
+Package pdftex.def Info: ./Figuras/mfcc.png  used on input line 128.
+(pdftex.def)             Requested size: 386.40147pt x 130.03088pt.
+ [2pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1
+}) has been already used, duplicate ignored
 
-LaTeX Warning: Reference `eq:Uxy' on page 2 undefined on input line 147.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.132 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+0.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.132 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+0.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.132 
+       <./Figuras/sample_1.png> <./Figuras/sample_2.png> <./Figuras/sample_3.pn
+g>]
+<./Figuras/mfcc_del.png, id=45, 1041.8925pt x 353.32pt>
+File: ./Figuras/mfcc_del.png Graphic file (type png)
+<use ./Figuras/mfcc_del.png>
+Package pdftex.def Info: ./Figuras/mfcc_del.png  used on input line 136.
+(pdftex.def)             Requested size: 386.40147pt x 131.03365pt.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 147.
+<./Figuras/dtw_1.jpg, id=48, 912.40875pt x 397.485pt>
+File: ./Figuras/dtw_1.jpg Graphic file (type jpg)
+<use ./Figuras/dtw_1.jpg>
+Package pdftex.def Info: ./Figuras/dtw_1.jpg  used on input line 164.
+(pdftex.def)             Requested size: 241.5pt x 105.20564pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 165.
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.0.4
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.169 A
+       nd Figure \ref{fig:dtwmfcc} illustrates the comparison of two MFCCs u...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.0.5}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.169 A
+       nd Figure \ref{fig:dtwmfcc} illustrates the comparison of two MFCCs u...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.0.6}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.169 A
+       nd Figure \ref{fig:dtwmfcc} illustrates the comparison of two MFCCs u...
+ <./Figuras/mfcc.png> <./Figuras/mfcc_del.png> <./Figuras/dtw_1.jpg>]
+<./Figuras/dtwmfcc.png, id=68, 681.54625pt x 609.27625pt>
+File: ./Figuras/dtwmfcc.png Graphic file (type png)
+<use ./Figuras/dtwmfcc.png>
+Package pdftex.def Info: ./Figuras/dtwmfcc.png  used on input line 176.
+(pdftex.def)             Requested size: 144.90147pt x 129.53224pt.
+<./Figuras/mfccdtw2.png, id=69, 826.08624pt x 382.42876pt>
+File: ./Figuras/mfccdtw2.png Graphic file (type png)
+<use ./Figuras/mfccdtw2.png>
+Package pdftex.def Info: ./Figuras/mfccdtw2.png  used on input line 182.
+(pdftex.def)             Requested size: 289.80295pt x 134.16133pt.
+<./Figuras/mfccpadding.png, id=73, 1049.9225pt x 353.32pt>
+File: ./Figuras/mfccpadding.png Graphic file (type png)
+<use ./Figuras/mfccpadding.png>
+Package pdftex.def Info: ./Figuras/mfccpadding.png  used on input line 216.
+(pdftex.def)             Requested size: 386.40147pt x 130.03088pt.
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.0.7
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.222 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+0.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.222 
+       <./Figuras/dtwmfcc.png> <./Figuras/mfccdtw2.png> <./Figuras/mfccpadding.
+png>]
+<./Figuras/knn.png, id=86, 2007.5pt x 1812.7725pt>
+File: ./Figuras/knn.png Graphic file (type png)
+<use ./Figuras/knn.png>
+Package pdftex.def Info: ./Figuras/knn.png  used on input line 227.
+(pdftex.def)             Requested size: 241.5pt x 218.04886pt.
+<./Figuras/cnn-1-1024x420.png, id=88, 1027.84pt x 421.575pt>
+File: ./Figuras/cnn-1-1024x420.png Graphic file (type png)
+<use ./Figuras/cnn-1-1024x420.png>
+Package pdftex.def Info: ./Figuras/cnn-1-1024x420.png  used on input line 235.
+(pdftex.def)             Requested size: 386.40147pt x 158.48262pt.
+<./Figuras/ex1.png, id=92, 359.3425pt x 280.04625pt>
+File: ./Figuras/ex1.png Graphic file (type png)
+<use ./Figuras/ex1.png>
+Package pdftex.def Info: ./Figuras/ex1.png  used on input line 251.
+(pdftex.def)             Requested size: 193.19705pt x 150.56891pt.
+<./Figuras/ex2.png, id=93, 321.2pt x 278.03876pt>
+File: ./Figuras/ex2.png Graphic file (type png)
+<use ./Figuras/ex2.png>
+Package pdftex.def Info: ./Figuras/ex2.png  used on input line 259.
+(pdftex.def)             Requested size: 193.19705pt x 167.2403pt.
+<./Figuras/dtwmalefemale.png, id=98, 540.0175pt x 830.10126pt>
+File: ./Figuras/dtwmalefemale.png Graphic file (type png)
+<use ./Figuras/dtwmalefemale.png>
+Package pdftex.def Info: ./Figuras/dtwmalefemale.png  used on input line 272.
+(pdftex.def)             Requested size: 193.19705pt x 296.97427pt.
+<./Figuras/dtwnoise.png, id=99, 520.94624pt x 807.015pt>
+File: ./Figuras/dtwnoise.png Graphic file (type png)
+<use ./Figuras/dtwnoise.png>
+Package pdftex.def Info: ./Figuras/dtwnoise.png  used on input line 280.
+(pdftex.def)             Requested size: 193.19705pt x 299.28046pt.
+<./Figuras/dtwall.png, id=100, 525.965pt x 829.0975pt>
+File: ./Figuras/dtwall.png Graphic file (type png)
+<use ./Figuras/dtwall.png>
+Package pdftex.def Info: ./Figuras/dtwall.png  used on input line 292.
+(pdftex.def)             Requested size: 193.19705pt x 304.54735pt.
+
+Underfull \hbox (badness 2772) in paragraph at lines 293--293
+[][]\T1/ptm/b/n/8 Evaluating DTW al-go-rithm with nor-mal
+ []
+
+<./Figuras/dtwnewvoice.png, id=101, 523.9575pt x 821.0675pt>
+File: ./Figuras/dtwnewvoice.png Graphic file (type png)
+<use ./Figuras/dtwnewvoice.png>
+Package pdftex.def Info: ./Figuras/dtwnewvoice.png  used on input line 300.
+(pdftex.def)             Requested size: 193.19705pt x 302.75035pt.
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.0.9}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.308 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+0.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.308 
+       <./Figuras/knn.png> <./Figuras/cnn-1-1024x420.png>] [6pdfTeX warning (ex
+t4): destination with the same identifier (name{figure.0.11}) has been already 
+used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.308 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+0.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.308 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+0.13}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.308 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+0.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.308 
+       <./Figuras/ex1.png> <./Figuras/ex2.png> <./Figuras/dtwmalefemale.png> <.
+/Figuras/dtwnoise.png>]
+<./Figuras/pcs.png, id=128, 566.115pt x 171.64125pt>
+File: ./Figuras/pcs.png Graphic file (type png)
+<use ./Figuras/pcs.png>
+Package pdftex.def Info: ./Figuras/pcs.png  used on input line 311.
+(pdftex.def)             Requested size: 338.09853pt x 102.51147pt.
+<./Figuras/knnall.png, id=131, 526.96875pt x 820.06375pt>
+File: ./Figuras/knnall.png Graphic file (type png)
+<use ./Figuras/knnall.png>
+Package pdftex.def Info: ./Figuras/knnall.png  used on input line 321.
+(pdftex.def)             Requested size: 193.19705pt x 300.65343pt.
+<./Figuras/knnown.png, id=132, 512.91624pt x 825.0825pt>
+File: ./Figuras/knnown.png Graphic file (type png)
+<use ./Figuras/knnown.png>
+Package pdftex.def Info: ./Figuras/knnown.png  used on input line 329.
+(pdftex.def)             Requested size: 193.19705pt x 310.77745pt.
 
 
-LaTeX Warning: Reference `eq:Uxy' on page 2 undefined on input line 147.
+LaTeX Warning: Empty bibliography on input line 342.
 
-
-LaTeX Warning: Reference `eq:Txy' on page 2 undefined on input line 147.
-
-[2]
-
-LaTeX Warning: Reference `fig:grafico' on page 3 undefined on input line 161.
-
-
-LaTeX Warning: Reference `fig:grafico' on page 3 undefined on input line 161.
-
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 165.
-<./Figuras/grafico.png, id=46, 3336.465pt x 2210.2575pt>
-File: ./Figuras/grafico.png Graphic file (type png)
-<use ./Figuras/grafico.png>
-Package pdftex.def Info: ./Figuras/grafico.png  used on input line 167.
-(pdftex.def)             Requested size: 241.5pt x 159.96132pt.
-
-LaTeX Warning: Reference `tab:resexp' on page 3 undefined on input line 177.
-
-
-LaTeX Warning: Reference `tab:resexp' on page 3 undefined on input line 177.
-
-[3 <./Figuras/grafico.png>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 199.
-
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 199.
-
-
-LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 20
-1.
-
-
-LaTeX Warning: Citation 'Coleman1991' on page 4 undefined on input line 202.
-
-
-LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 202.
-
-
-LaTeX Warning: Citation 'Wizentier1992' on page 4 undefined on input line 203.
-
-
-LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 203.
-
-
-LaTeX Warning: Citation 'Larsson2018' on page 4 undefined on input line 203.
-
-
-LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 20
-4.
-
-
-LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 204.
-
-
-LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 204.
-
-
-LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 20
-8.
-
-
-LaTeX Warning: Citation 'Coleman1991' on page 4 undefined on input line 209.
-
-
-LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 209.
-
-
-LaTeX Warning: Citation 'Wizentier1992' on page 4 undefined on input line 210.
-
-
-LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 210.
-
-
-LaTeX Warning: Citation 'Larsson2018' on page 4 undefined on input line 210.
-
-
-LaTeX Warning: Citation 'VanEkenstein1997' on page 4 undefined on input line 21
-1.
-
-
-LaTeX Warning: Citation 'Nriagu1988' on page 4 undefined on input line 211.
-
-
-LaTeX Warning: Citation 'Faina2000' on page 4 undefined on input line 211.
-
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 225.
-
-LaTeX Warning: Empty bibliography on input line 237.
-
-[4]
 
 Class memoir Warning: The material used in the headers is too large
 (48.696pt) for the given head height (45.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 264.
+(in both cases you will find help in the memoir manual). on input line 345.
 
-[5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
- (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 264.
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.0.15
+}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.345 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.0.16}) has been already used, duplicate ignored
 
-LaTeX Warning: There were undefined references.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.345 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.0.17}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.345 \end{document}
+                     <./Figuras/dtwall.png> <./Figuras/dtwnewvoice.png> <./Figu
+ras/pcs.png>] [8pdfTeX warning (ext4): destination with the same identifier (na
+me{figure.0.18}) has been already used, duplicate ignored
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.345 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.0.19}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.345 \end{document}
+                     <./Figuras/knnall.png> <./Figuras/knnown.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
 
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                report
-(biblatex)                and rerun LaTeX afterwards.
-
+(./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 345.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
  )
-(\end occurred when \unless\ifcsname on line 80 was incomplete) 
+(\end occurred when \unless\ifcsname on line 58 was incomplete) 
 Here is how much of TeX's memory you used:
- 29911 strings out of 492649
- 522445 string characters out of 6129621
- 1174840 words of memory out of 5000000
- 33224 multiletter control sequences out of 15000+600000
- 603329 words of font info for 219 fonts, out of 8000000 for 9000
+ 30365 strings out of 492649
+ 529089 string characters out of 6129621
+ 1185661 words of memory out of 5000000
+ 33667 multiletter control sequences out of 15000+600000
+ 603855 words of font info for 199 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,17n,63p,10450b,4000s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (
-dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a 
+dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a 
 fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
 
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
 live/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2018/texm
@@ -2029,17 +2192,17 @@ f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-di
 st/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
-ype1/public/lm/lmtt8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/he
-lvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/
-uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/symbol/usyr.pfb>
+ype1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/ur
+w/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/symbo
+l/usyr.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/symbol/usyr.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loca
 l/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (6 pages, 937719 bytes).
+Output written on report.pdf (8 pages, 3157953 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 45224 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 44767 words of extra memory for PDF output out of 51595 (max. 10000000)
 

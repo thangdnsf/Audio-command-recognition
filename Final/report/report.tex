@@ -1,33 +1,9 @@
-%%%% utfprpgtex-article.tex, 2019/02/20
-%%%% Copyright (C) 2016-2019 Luiz E. M. Lima (luizeduardomlima@gmail.com)
-%%
-%% Este arquivo pode ser distribuído e/ou modificado sob as condições da
-%% Licença Pública do Projeto LaTeX, tanto a versão 1.3 desta licença ou (à sua
-%% opção) qualquer versão posterior.
-%% A versão mais recente desta licença está disponível em
-%%   http://www.latex-project.org/lppl.txt
-%% e a versão 1.3 ou posterior faz parte de todas as distribuições de LaTeX
-%% versão 2005/12/01 ou posterior.
-%%
-%% Este arquivo tem o estado de manutenção da LPPL `mantida'.
-%%
-%% O mantenedor atual deste arquivo é Luiz E. M. Lima.
-%%
-%% Este projeto consiste dos arquivos utfprpgtex-article.sty e
-%% utfprpgtex-article.tex.
-%%
-%% utfprpgtex-article.tex é o arquivo principal do modelo LaTeX (não oficial)
-%% para produção de artigo da Universidade Tecnológica Federal do Paraná
-%% (UTFPR). Foi desenvolvido baseado no modelo de artigo do abnTeX2, disponível
-%% em <http://www.abntex.net.br/>.
-
-%% Passagem de opções para pacotes
 \PassOptionsToPackage{english, main = english}{babel}%% Suporte multilíngue
 
 %% Classe e opções de documento
 \documentclass[%% Opções
 %%%% Opções da classe memoir
-  report,%% Tipo de documento: article, book, report, etc.
+  article,%% Tipo de documento: article, book, report, etc.
   10pt,%% Tamanho de fonte: 10pt, 11pt, 12pt, etc.
   a4paper,%% Tamanho de papel: a4paper, letterpaper, etc.
   fleqn,%% Alinhamento de equações à esquerda (comente para centralizado)
@@ -87,10 +63,8 @@
 
 \begin{ambienteresumo}[Abstract]%% Abstract
 \begin{otherlanguage*}{english}%% Idioma do abstract
-Speech recognition can be used in many fields, including command recognition for voice drone control.
-One method that is commonly used for speech recognition is the dynamic time warping (DTW) algorithm. An advantage of this method is that it yields good results without the need for a very large dataset.
-Other techniques can be used beside in order to do speech recognition, such methods include principal component analysis (PCA) together with k-nearest neighbors (KNN).
-\palavraschave[Keywords]{DTW. PCA. KNN. MFCC. Speech Recognition}%% Keywords
+Speech recognition can be used in many fields, including command recognition for voice drone control. The state of the arts methods for spoken word recognition often base on MFCCs (Mel Frequency Cepstral Coefficients) to extract feature of audio. In this report, We present some approaches to classify the 13 drone commands in French. Firstly, We use dynamic time warping (DTW) algorithm. Second approach, using Principal Component Analysis (PCA) to get feature data reduction of MFCC and then apply k-nearest neighbors (KNN) to classify them. A upgrade of this approach, we combine MFCC and Delta Coefficients to get more features about sound and frame signals change. And finally, we use Convolution neural networks (CNN) into MFCCs directly. The dataset is composed of  235 records without noise and 53 records with noise from 13 native speakers. We use 80\% of our dataset to train model, 20\% dataset to test and measure the accuracy of approache. During training, we augment data to variety of situations dataset like pitch, shift, stretch, ignore noise,\dots The best results base on F1 score, when we use DTW is 86\%, PCA + KNN is 94\% and CNN is 89\%. We also evaluate independently on own dataset (50 files) from native accent and Vietnamnese accent with DTW is 80\%, PCA + KNN is 87\% and CNN is 80\%.
+\palavraschave[Keywords]{DTW, PCA, KNN, MFCC, delta coef, CNN, Speech Recognition}%% Keywords
 \end{otherlanguage*}
 \end{ambienteresumo}
 
@@ -100,68 +74,74 @@ Other techniques can be used beside in order to do speech recognition, such meth
 
 \section{Introduction}\label{sec:intro}
 
-Speech recognition is the translation of spoken language into text by a computer.
-This field has applications in many domains, including, but not limited to, health care, military, and telephony.
-In our case, it will be used to give voice commands for controlling a drone.
-Unlike direct control methods such as a menu, speech recognition is not trivial and is not always flawless.
-The computer has no way to directly execute what the speech represents but needs to interpret the voice before execution.
-This can prove troublesome when the sample has noise, inconsistent speed, volume and many more parameters that can degrade their quality.
+The pattern speech recognition is rapidly applying in may domains including, health care, military, and telephony,\dots Which can identify the pattern of content base on the form of wave that reflects physiologic and behavior characteristics from speaker that is called the feature extraction process. There are many feature extraction methods exist for audio but Mel Frequency Cepstral Coefficients (MFCCs) algorithm is a the state of the art method have been widely used. Then they used to classify or measure distance between datas. There are many the state of the art methods to do that such as: Dynamic time warping (DTW), KNN, Neural Network,\dots In this report, we will implement DTW algorithm, KNN and Convolution Neural networks.
+
+%Then they are applied PCA to reduce the size of feature dimension and keep important features. Using PCA before training model such as:  KNN, SVM, Neural Networks, \dots will enable our classification model to seed up and more accuracy.
+
+In our case, it will be used to give voice commands for controlling a drone. Unlike direct control methods such as a menu, speech recognition is not trivial and is not always flawless. The computer has no way to directly execute what the speech represents but needs to interpret the voice before execution. This can prove troublesome when the sample has noise, inconsistent speed, volume and many more parameters that can degrade their quality.
+
 As a result, we need a way to accurately interpret the voice commands as one of 13 instructions for controlling a drone: \textit{arretetoi}, \textit{atterrissage}, \textit{avance}, \textit{decollage}, \textit{droite}, \textit{etatdurgence}, \textit{faisunflip}, \textit{gauche}, \textit{plusbas}, \textit{plushaut}, \textit{recule}, \textit{tournedroite}, \textit{tournegauche}.
-The final goal is to recognize these isolated instructions given in our voice as accurately as possible and compare the results of the DTW algorithm with PCA preprocessing and KNN classification.
 
-\section{Metodologia}\label{sec:met}
+In the next section will explain about methodology, results, and conclusions. In section II will be explained about the methodology of speech reconciliation process in detail. In the section III will be demonstrate the our results, while section IV show the conclusions. 
+%The final goal is to recognize these isolated instructions given in our voice as accurately as possible and compare the results of the DTW algorithm with PCA preprocessing and KNN classification.
 
-\subsection{Dataset}
+\section{Methodology}\label{sec:met}
+In this section, we will present and explain more detail about the speech recognition process on each approaches.
 
-The dataset we had access to was composed of sets of the 13 instructions spoken by different persons in different conditions.
-It can be divided into three categories: 4 sets where voices of males with a high level of noise, 13 sets where voices of males with no noise and 5 sets where voices of females with no noise.
-Each sample is isolated but not reduced to only the instruction, so we need to cut the empty parts of the sample, as shown by the two following figures.
+First of all, we present briefly the dataset and take preprocessing data.
+\subsection{Dataset and preproccesing}
+The dataset we had access to was composed of sets of the 13 instructions spoken by 13 native speakers in different conditions with audio parameters: 16 KHz, mono, 16 bits, .wav format. The total of dataset include 235 records without noise (by 13 males and 5 females) and 53 records (by 4 males) .
+%It can be divided into 2 categories: 4 sets where voices of males with a high level of noise, 13 sets where voices of males with no noise and 5 sets where voices of females with no noise. 
+During record dataset, Speaker often silent before and after speak word. So the audio file usually has silent two sides of main wave as shown Figure \ref{fig:sample_1}. So we need to cut the slient parts of the sample as Figure \ref{fig:sample_2} using trim method in librosa library with threshold to consider as silence is 30.
+%Each sample is isolated but not reduced to only the instruction, so we need to cut the empty parts of the sample, as shown by the two following figures.
 
 \begin{figure}[H]
   \centering
-  \caption{Sample before trimming.}
+  \includegraphics[width = 0.8\columnwidth]{./Figuras/sample_1}
+   \caption{Sample before trimming.}
   \label{fig:sample_1}
-  \includegraphics[width = 0.5\columnwidth]{./Figuras/sample_1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \caption{Sample after trimming.}
+   \includegraphics[width = 0.8\columnwidth]{./Figuras/sample_2}
+    \caption{Sample after trimming.}
   \label{fig:sample_2}
-  \includegraphics[width = 0.5\columnwidth]{./Figuras/sample_2}
 \end{figure}
 
-\subsection{DTW and MFCC}
+And the next task needs to reduce noise which affects the quality of audio and accuracy of the model by using noise reduction library based on algorithm by Audacity and get result as Figure \ref{fig:sample_3}.
+\begin{figure}[H]
+  \centering
+   \includegraphics[width = 0.8\columnwidth]{./Figuras/sample_3}
+    \caption{Sample after remove silent two sides.}
+  \label{fig:sample_3}
+\end{figure}
 
-The first part our recognition method uses the dynamic time warping (DTW) algorithm on the mel-frequency cepstral coefficients (MFCCs) of each samples.
+We use 80\% of our dataset to train model, 20\% dataset to test and measure the accuracy of approaches. During training, we has augmented data to variety of situations dataset like pitch, shift, stretch, ignore noise,\dots
 
-\subsubsection{DTW}
+\subsection{Feature extraction}
 
-The dynamic time warping algorithm is a popular method for comparing two linear sequences.
-This algorithm centers on calculating the similarities between the two sequences, which is exactly what is wanted for speech recognition.
-It works by matching every elements of a "training" sequnce against every elements of a "test" sequence, with restrictions.
-The first element of the training sequence is matched with the first element of the test sequence, and the last element of the training sequence is matched with the last element of the test sequence.
-Furthermore, if the element $i$ of the training sequence is matched with the element $j$ of the test sequence, then the element $j + 1$ must be matched with either $i$ or $i + 1$.
-Illustrated by \autoref{fig:dtw_1} is the warping between two linear sequences.
+After data preprocessing, we will need to extract important features of each audio. One of the sate of the art methods is the mel-frequency cepstral coefficients (MFCCs) algorithm. MFCC is a frequency warping method that allows for a better representation of the response the human earing has, since it does not follow a linear scale. It calculates coefficients by performing a Fourier transform, mapping the result to the mel scale, taking the logs of the powers at certain frequencies, taking the discrete cosine transform of the logs and getting the amplitudes of the resulting spectrum. Figure \ref{fig:mfcc} is a sample of 'etadurgence' word. 
 
 \begin{figure}[H]
   \centering
-  \caption{Warping between two time series.}
-  \label{fig:dtw_1}
-  \includegraphics[width = 0.5\columnwidth]{./Figuras/dtw_1}
-  \fonte{Florida Institute of Technology}
-\end{figure}
+  \includegraphics[width = 0.8\columnwidth]{./Figuras/mfcc}
+  \caption{MFCC of 'etadurgence' word}
+  \label{fig:mfcc}
+ \end{figure}
 
-After all elements have been matched, the algorithm allows for a difference coefficient between the two sequences to be calculated.
-This coefficient will be closer to 0 for a test sequence closer to the training sequence, and is calculated with the value of the last element of the matrix.
-In \autoref{fig:dtw_2}, said coefficient would be calculated based on the value of the top right corner cell.
-
+To get more accuracy, we use Delta Coefficients and Delta Coefficients order 2 to extract feature regarding frame signals change, like the slope of a formant on the transition show example as figure \ref{fig:mfccdel}.
 \begin{figure}[H]
   \centering
-  \caption{Comparison matrix with recognition path}
-  \label{fig:dtw_2}
-  \includegraphics[width = 0.5\columnwidth]{./Figuras/dtw_2}
-\end{figure}
+  \includegraphics[width = 0.8\columnwidth]{./Figuras/mfcc_del}
+  \caption{MFCC, del, del 2 of 'decollage' word}
+  \label{fig:mfccdel}
+ \end{figure}
+
+\subsection{Methods}
+
+\subsubsection{Dynamic time warping}
+The Dynamic time warping (DTW) algorithm is showed in Algorithm\ref{euclid} is a popular method for comparing two sequences and illustrated by Figure \ref{fig:dtw_1}.
 
 \begin{algorithm}
   \caption{DTW algorithm}\label{euclid}
@@ -179,47 +159,66 @@ In \autoref{fig:dtw_2}, said coefficient would be calculated based on the value 
     \State $D \gets g(I, J) / (I + J)$
   \end{algorithmic}
 \end{algorithm}
-
-This algorithm requires a way to calculate the distance between two elements of a linear sequence.
-In order to do that, we use the MFCC.
-
-\subsubsection{MFCC}
-
-The mel-frequency cepstral coefficients is a frequency warping method that allows for a better representation of the response the human earing has, since it does not follow a linear scale.
-It calculates coefficients by performing a Fourier transform, maping the result to the mel scale, taking the logs of the powers at certain frequencies, taking the discrete cosine transform of the logs and getting the amplitudes of the resulting spectrum.
-
 \begin{figure}[H]
   \centering
-  \caption{Link between amplitude and mel frequency}
-  \label{fig:mfcc}
-  \includegraphics[width = 0.5\columnwidth]{./Figuras/mfcc}
-  \fonte{University of Florida}
+   \includegraphics[width = 0.5\columnwidth]{./Figuras/dtw_1}
+  \caption[Warping between two time series]{Warping between two time series\footnotemark.}
+  \label{fig:dtw_1}
+\end{figure}\footnotetext{Florida Institute of Technology}
+
+And Figure \ref{fig:dtwmfcc} illustrates the comparison of two MFCCs using DTW.
+
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.3\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/dtwmfcc}
 \end{figure}
+\end{minipage}\qquad
+\begin{minipage}[b]{.6\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/mfccdtw2}
+\end{figure}
+\end{minipage}
+\caption[css]{Compare two MFCCs using DTW\footnotemark}
+\label{fig:dtwmfcc}
+\end{figure*}
+\footnotetext{musicinformationretrieval.com}
+
+The first part our recognition method uses the dynamic time warping (DTW) algorithm on the MFCCs of each samples present in Algorithm \ref{mfccdtw}.
+
+\begin{algorithm}
+  \caption{MFCCs classification using DTW}\label{mfccdtw}
+  \begin{algorithmic}
+    \State $y\_pred = []$
+    \For {$x \gets X\_test$}
+    	\State $min\_dist \gets +\infty$
+	\State $min\_index = None$
+   	 \For {$x\_train,y\_train \gets X\_train, Y\_train$}
+   		 \State $dist \gets dtw(x^T, x\_train^T)$
+    		\If {$min\_dist > dist$}
+    			\State $min\_dist \gets dist$
+			\State $min_index = y\_train$
+    		\EndIf
+    	\EndFor
+	\State $y\_pred \gets min_index$
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
 
 \subsection{PCA and KNN}
-
-The second part of our recognition method is to use the principal component analysis (PCA) in order to preprocess our sequences, before classification with the KNN algorithm.
-
-\subsection{PCA}
-
-Principal component analysis is a method that allows to reduce the size of a set by transforming it into a set of linearly uncorrelated variable.
-It works by calculating the covariance matrix of the sequence, then by calculating the eigenvalues and eigenvectors of this matrix, choosing a subset of these eigenvectors and projecting the dataset onto a new basis created by the chosen eigenvectors.
+The second approach of our recognition method is to apply the principal component analysis (PCA) on our dataset, before classification with the KNN algorithm. PCA is a method that allows to reduce the size of a set by transforming it into a set of linearly uncorrelated variable. It works by calculating the covariance matrix of the sequence, then by calculating the eigenvalues and eigenvectors of this matrix, choosing a subset of these eigenvectors and projecting the dataset onto a new basis created by the chosen eigenvectors. Note that, we need to fix size of all data by padding zeros vector to two slide of each MFCC Figure \ref{fig:mfccpadding} and flatten each MFCC to vector. and Then rescaling our data to a range between -1 and 1, with StandardScaler method from sklearn. 
 
 \begin{figure}[H]
   \centering
-  \caption{PCA in the euclidian plane.}
-  \label{fig:pca}
-  \includegraphics[width = 0.5\columnwidth]{./Figuras/pca}
-  \fonte{Wikipedia}
+  \includegraphics[width = 0.8\columnwidth]{./Figuras/mfccpadding}
+  \caption{Fix size MFCC by padding zero vectors}
+  \label{fig:mfccpadding}
 \end{figure}
 
-\subsection{KNN}
-
-K-nearest neighbors is an algorithm used for classification of data.
-It works by having a training base, on which is placed a test sample.
-The training base is composed of vectors with each an associated label, the label on these training vectors represents a class.
-We then check the neighborhood of the test sample, and take its k closest neighbors.
-These neighbors are then used to classify the test sample, with techniques such as majority voting, or weighted majority voting.
+And the we will classify via classification algorithms like KNN, SVM, Neural networks, \dots  We will perform the K-nearest neighbors (KNN) using KNN method in sklearn librarys. It works by having a training base, on which is placed a test sample. The training base is composed of vectors with each an associated label, the label on these training vectors represents a class. We then check the neighborhood of the test sample, and take its k closest neighbors. These neighbors are then used to classify the test sample, with techniques such as majority voting, or weighted majority voting.
 
 \begin{figure}[H]
   \centering
@@ -228,155 +227,118 @@ These neighbors are then used to classify the test sample, with techniques such 
   \includegraphics[width = 0.5\columnwidth]{./Figuras/knn}
 \end{figure}
 
-\section{Result}\label{sec:res}
+\subsection{Convolutions neural networks}
+The convolutions neural networks (CNN) is a neural network that has one or many convolutional layers as Figure\ref{fig:cnn} and are used mainly for image processing, classification, segmentation, \dots And this problem, we apply CNN model with our dataset as a image dataset where a MFCC matrix as a image.
 
-O texto desta seção deve descrever detalhadamente os dados e/ou resultados obtidos pelo autor, que normalmente são apresentados na forma de quadros, tabelas, gráficos, etc. Deve ser efetuada a comparação dos dados obtidos e/ou resultados, com aqueles descritos na revisão de literatura, incluindo os comentários sobre os estudos de outros autores.
-
-\section{Conclusões}\label{sec:concl}
-
-O texto desta seção deve apresentar as conclusões do trabalho baseando-se nos resultados obtidos para mostrar a sua viabilidade técnica e/ou econômica. Deve finalizar o trabalho com uma resposta às hipóteses especificadas na introdução. O autor deve manifestar seu ponto de vista sobre os resultados obtidos; não se deve incluir novos dados ou equações. A partir da tese, alguns assuntos que foram identificados como importantes para serem explorados poderão ser sugeridos como temas para novas pesquisas.
-
-\section{Informações sobre o Desenvolvimento do Projeto}\label{sec:infoproj}
-
-Nesta seção, são apresentadas informações referentes ao desenvolvimento do projeto. Portanto, esta seção não deve fazer parte da versão final do projeto.
-
-O projeto consiste na \textcolor{red}{proposição e realização de estudo} de alguma aplicação dos conceitos desenvolvidos na disciplina, principalmente os relacionados ao \textcolor{red}{nome do tema}, em algum dispositivo ou situação de interesse prático. Este estudo pode apresentar soluções analíticas, computacionais e/ou experimentais. O projeto é uma atividade \textcolor{red}{opcional}, pode ser desenvolvido \textcolor{red}{em grupo} (máximo 3 membros) e deve ser rigorosamente apresentado de acordo com estas instruções em duas etapas.
-
-A \textcolor{red}{primeira etapa} consiste da entrega de uma \textcolor{red}{proposta de pesquisa} até data definida. Esta proposta deve apresentar informações até a introdução, bem como as referências, conforme este modelo. Esta etapa é uma pré-avaliação e, portanto, sujeita à aprovação do tema definido. A \textcolor{red}{segunda etapa} consiste da entrega do \textcolor{red}{projeto de pesquisa} até data definida. Este projeto de pesquisa deve apresentar informações de todas as seções deste modelo.
-
-\section{Informações sobre a Formatação do Texto}\label{sec:infoform}
-
-Nesta seção, são apresentadas informações referentes à formatação do texto. Portanto, esta seção não deve fazer parte da versão final do projeto. O texto do projeto deve ser rigorosamente formatado de acordo com estas instruções.
-
-O arquivo de texto deste projeto está limitado a um máximo de 10 páginas, incluindo tabelas e figuras. O arquivo final em formato pdf (\textcolor{red}{Código}-Projeto-\textcolor{red}{Nome\_do\_Aluno}.pdf) não deve exceder 5 MB e pode ser gerado a partir do arquivo em formato do Microsoft Word (Modelo do Projeto.docx) ou a partir do editor online para LaTeX (disponível em <\url{http://www.papeeria.com/p/ca8c4367f7c9433b11307a3f720271f8?withLastOpenedFile=false}>). Para gerar a versão final a partir do arquivo do Microsoft Word lembre-se de mudar na guia revisão de ``Final: Mostrar Marcação'' para ``Final''.
-
-O projeto deve ser digitado em papel tamanho A4, usando Fonte Times New Roman, tamanho 10, exceto para o título, nome e e-mail de autores, instituição, resumo e palavras-chave, que têm formatações específicas. Espaço simples entre linhas deve ser usado ao longo do texto. Todas as margens devem ter 2 cm, exceto a superior (2,5 cm).
-
-\subsection{Títulos e Subtítulos das Seções}\label{ssec:tit}
-
-Os títulos das seções e subseções devem ser digitados em formato Times New Roman, tamanho 10, negrito e alinhado à esquerda. Os títulos das seções devem ser formatados em letras maiúsculas (exemplo: \textbf{MODELO MATEMÁTICO}), enquanto que os títulos das subseções devem ter somente as primeiras letras em maiúsculas (exemplo: \textbf{Modelo Matemático}). Eles devem ser numerados, usando numerais arábicos separados por pontos, até o máximo de 3 subníveis. Uma linha em branco de espaçamento simples deve ser incluída acima e abaixo de cada seção/subseção.
-
-\subsection{Corpo do Texto}\label{ssec:corpo}
-
-O corpo do texto deve ser justificado e com espaçamento simples. A primeira linha de cada parágrafo deve ter recuo de 0,6 cm a partir da margem esquerda.
-
-\subsubsection{Equações}\label{sssec:eqs}
-
-As equações matemáticas devem ser alinhadas à esquerda com recuo de 0,6 cm (mas também podem ser centralizadas). As equações devem ser referenciadas por Eq.~\eqref{eq:Uxy} no meio da frase, ou por Equação~\eqref{eq:Uxy} quando usada no início de uma sentença. Os números das equações devem ser formatados com numerais arábicos colocados entre parênteses, e alinhados à direita, como mostrado na Eq.~\eqref{eq:Txy}. Os símbolos usados nas equações devem ser definidos imediatamente antes ou depois de sua primeira ocorrência no texto do trabalho. O tamanho da fonte usado nas equações deve ser compatível com o utilizado no texto. Todos os símbolos devem ter suas unidades expressas no Sistema Internacional (SI).
-
-\begin{equation}\label{eq:Uxy}
-\frac{\partial^2 U}{\partial x^2} + \frac{\partial^2 U}{\partial y^2} = 0
-\end{equation}
-
-\begin{equation}\label{eq:Txy}
-\frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} = 0
-\end{equation}
-
-Equações podem ser inseridas neste documento usando o ambiente \LaTeX\ ``equation'', conforme exemplo no arquivo fonte deste modelo. Símbolos matemáticos (ou equações mais simples) podem ser inseridos ao longo do texto de um parágrafo usando o ambiente \LaTeX\ ``math'' (\verb|$...$|), por exemplo: $\alpha$, $A = \pi D^{2} /4$, etc. Para gerar ou editar equações em \LaTeX\ pode-se utilizar a ferramenta ``Formula Sheet'', disponível em <\url{http://formulasheet.com/}>, dentre outras.
-
-\subsubsection{Figuras}\label{sssec:figs}
-
-As figuras devem ser centralizadas e referenciadas por Fig.~\ref{fig:grafico} no meio da frase ou por Figura~\ref{fig:grafico} quando usada no início de uma sentença. Sua legenda deve ser centralizada e localizada imediatamente acima da figura. As anotações e numerações devem tem tamanhos compatíveis com o da fonte usada no texto, e todas as unidades devem ser expressas no Sistema Internacional (SI). As figuras devem ser colocadas o mais próximo possível de sua primeira citação no texto. Deixe uma linha em branco entre as figuras e o texto.
-
-\begin{figure}[!htb]
-\centering
-\caption{Comparação entre os resultados do presente modelo com os resultados experimentais de Wirtz e Stutzman (1982), em termos da diferença de temperatura em função da altura do canal.}
-\label{fig:grafico}
-\includegraphics[width = 0.5\columnwidth]{./Figuras/grafico}
-\fonte{Autoria própria.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.8\columnwidth]{./Figuras/cnn-1-1024x420}
+  \caption{Convolutions neural networks.}
+  \label{fig:cnn}
 \end{figure}
 
-Figuras coloridas e fotografias de alta qualidade podem ser incluídas no trabalho. Para reduzir o tamanho do arquivo e preservar a resolução gráfica, converta os arquivos das imagens para o formato GIF (para figuras com até 16 cores) ou para o formato JPEG (alta densidade de cores), antes de inseri-los no trabalho.
+\section{Performed tests and Results}\label{sec:res}
+In this section, we will implement and present our above proposal methods in more detail. All our experiments are performed in python programming language and using jupyter notebook editor. To evaluate independently, we have recorded own dataset (39 files )by native and Vietnamese accent.
 
-Figuras podem ser inseridas neste documento usando o ambiente \LaTeX\ ``figure'', conforme exemplo no arquivo fonte deste modelo.
+\subsection{DTW}
+We have implemented Algorithm \ref{euclid} and evaluated by solving exercise TD2 as Figure \ref{fig:ex1} and \ref{fig:ex2}.
 
-\subsubsection{Tabelas}\label{sssec:tabs}
-
-As tabelas devem ser centralizadas e referenciadas por Tab.~\ref{tab:resexp} no meio da frase, ou por Tabela~\ref{tab:resexp} quando usada no início de uma sentença. Sua legenda deve ser centralizada e localizada imediatamente acima da tabela. Anotações e valores numéricos nela incluídos devem ter tamanhos compatíveis com o da fonte usado no texto do trabalho, e todas as unidades devem ser expressas no Sistema Internacional (SI). As unidades devem ser incluídas apenas na primeira linha ou primeira coluna de cada tabela, conforme for apropriado. As tabelas devem ser colocadas tão perto quanto possível de sua primeira citação no texto. Deixe uma linha simples em branco entre a tabela, seu título e o texto. O estilo de borda da tabela é livre. As legendas das figuras e das tabelas não devem exceder 3 linhas.
-
-\begin{table*}[!htb]
+\begin{figure*}
 \centering
-\caption{Resultados experimentais para as propriedades de flexão dos materiais CFRC-TWILL e CFRC-4HS. Valores médios obtidos em 20 ensaios.}
-\label{tab:resexp}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lll}
-\hline
-Propriedades do compósito    & CFRC-TWILL    & CFRC-4HS     \\ \hline
-Resistência à Flexão / [MPa] & 209$\pm$10    & 180$\pm$15   \\
-Módulo de Flexão / [GPa]     & 57,0$\pm$2,8  & 18,0$\pm$1,3 \\ \hline
-\end{tabular*}
-\fonte{Autoria própria.}
-\end{table*}
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/ex1}
+  \caption{Comparing two numerical sequences}
+  \label{fig:ex1}
+\end{figure}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/ex2}
+   \caption{Comparing DNA sequences}
+   \label{fig:ex2}
+\end{figure}
+\end{minipage}
+\end{figure*}
 
-Tabelas podem ser inseridas neste documento usando o ambiente \LaTeX\ ``table'', conforme exemplo no arquivo fonte deste modelo. Para gerar ou editar tabelas em \LaTeX\ pode-se utilizar a ferramenta ``Tables Generator'', disponível em <\url{http://www.tablesgenerator.com/}>, dentre outras.
+And then, we have evaluated performance of DTW algorithm with the following cases. Firstly, Evaluating influence male/ female voices and we have got so good result as Figure \ref{fig:dtwmalevsfemale}. Secondly, Evaluating influence background noises on recognition (learning set is data without noise and test set is data with noise) and we have got bad result as Figure \ref{fig:dtwnoiseonly}. Thirdly, Evaluating with normal (ramdom noise and without noise) data as Figure \ref{fig:dtwall}. And finally, evaluating ability to new voice as Figure \ref{fig:dtwnewvoice}
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/dtwmalefemale}
+  \caption{Evaluating DTW algorithm influence male/ female voices}
+  \label{fig:dtwmalevsfemale}
+\end{figure}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/dtwnoise}
+   \caption{Evaluating DTW algorithm influence background noises on recognition}
+   \label{fig:dtwnoiseonly}
+\end{figure}
+\end{minipage}
+\end{figure*}
 
-\subsubsection{Citações e Referências}\label{sssec:citref}
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/dtwall}
+  \caption{Evaluating DTW algorithm with normal (ramdom noise and without noise) data}
+  \label{fig:dtwall}
+\end{figure}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/dtwnewvoice}
+   \caption{Evaluating DTW algorithm ability to new voice}
+   \label{fig:dtwnewvoice}
+\end{figure}
+\end{minipage}
+\end{figure*}
+\subsection{PCA and KNN}
+We have augmented dataset by changing pitch with Frequency (+15\%,+25\%,+50\%,-15\%,-25\%,-50\%). Which permits dataset is better make our model to do not depend on accent and reduce noise. In here, we implement following upgrade version: using delta and delta 2 of MFCC as Figure \ref{fig:pcs}.
 
-As citações das referências no corpo do texto podem ser feitas no formato autor-ano da Associação Brasileira de Normas Técnicas (ABNT):
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.7\columnwidth]{./Figuras/pcs}
+  \caption{The MFCC + Del + Del2 +PCA + KNN process.}
+  \label{fig:pcs}
+\end{figure}
+And we have got best results on test data is 93\% as Figure \ref{fig:knnall} and 95\% on own data as Figure \ref{fig:knnown}.
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/knnall}
+  \caption{Evaluating PCA+KNN model normal (ramdom noise and without noise) data}
+  \label{fig:knnall}
+\end{figure}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \columnwidth]{./Figuras/knnown}
+   \caption{Evaluating PCA+KNN ability to new voice}
+   \label{fig:knnown}
+\end{figure}
+\end{minipage}
+\end{figure*}
 
-\begin{itemize}
-\item Implícitas:
-\begin{itemize}
-\item ... \cite{VanEkenstein1997}.
-\item ... \cite{Coleman1991,Nriagu1988}.
-\item ... \cite{Wizentier1992,Faina2000,Larsson2018}.
-\item ... \cite{VanEkenstein1997,Nriagu1988,Faina2000}.
-\end{itemize}
-\item Explícitas:
-\begin{itemize}
-\item \textcite{VanEkenstein1997} afirmam que...
-\item ..., conforme visto em \textcite{Coleman1991,Nriagu1988}.
-\item Segundo \textcite{Wizentier1992,Faina2000,Larsson2018},...
-\item ... como as definições de \textcite{VanEkenstein1997,Nriagu1988,Faina2000}.
-\end{itemize}
-\end{itemize}
+\subsection{CNN}
+We have tried to train Deep Neural network model - CNN. Figure \ref
+\section{conclusions}
 
-Referências aceitas incluem: artigos (de periódicos ou de anais de congressos), dissertações, teses, livros, comunicações privadas, etc. A lista de referências deve ser uma nova seção denominada Referências. Todas as referências incluídas na lista devem aparecer como citações no texto do trabalho. As referências devem ser postas em ordem alfabética, usando o último nome do primeiro autor. Um exemplo de lista de referências é apresentado na sequência.
-
-Citações e referências podem ser inseridas neste documento usando os comandos do pacote \LaTeX\ ``biblatex'', disponível em <\url{http://ctan.org/pkg/biblatex/}>, conforme exemplos no arquivo fonte deste modelo. Os dados de cada referência podem ser obtidos de um arquivo ``bibtex'' (*.bib), geralmente na própria página de \textit{download} da referência (artigos, livros, etc.) ou, ainda, a partir do Google Acadêmico, etc. Para gerar ou editar entradas de arquivos ``bibtex'' (*.bib) pode-se utilizar a ferramenta ``Bibtex Editor'', disponível em <\url{http://truben.no/latex/bibtex/}>, ou ``ZoteroBib'', disponível em <\url{http://zbib.org/}>, dentre outras.
-
-\subsubsection{Plágio Acadêmico}\label{sssec:plagio}
-
-As devidas citações de referências para textos, figuras, tabelas, etc., bem como a apresentação de suas respectivas fontes de referência, são de extrema importância na redação de qualquer texto, principalmente acadêmico/científico, para que não se caracterize a prática de plágio.
-
-A violação dos direitos autorais é CRIME previsto no Artigo 184 do Código Penal, com punição que vai desde o pagamento de multa até a reclusão de quatro anos, dependendo da extensão e da forma como o direito do autor foi violado. Além das penalidades citadas e da desmoralização acadêmica, o plagiário estará sujeito a sanções cíveis, como retratação pública e indenização pecuniária por dano moral e/ou patrimonial, e também a sanções administrativas, que podem chegar à reprovação/desligamento da instituição, no caso de estudantes, e demissão, no caso de professores/pesquisadores.
-
-\subsection{Informações e Dicas sobre \TeX/\LaTeX}\label{ssec:texlatex}
-
-\begin{itemize}
-\item \LaTeX\ Project: <\url{http://www.latex-project.org/}>.
-\item Comprehensive \TeX\ Archive Network (CTAN): <\url{http://www.ctan.org/}>.
-\item \TeX\ Users Group (TUG): <\url{http://www.tug.org/}>.
-\item \LaTeX\ - Wikibooks: <\url{http://en.wikibooks.org/wiki/LaTeX/}>.
-\item \TeX\ - \LaTeX\ Stack Exchange: <\url{http://tex.stackexchange.com/}>.
-\end{itemize}
-
-\postextual%% Elementos pós-textuais
 
 \printbibliography%% Referências
-
-\begin{ambienteapendices}%% Apêndices
-
-\chapter{Título do Apêndice}\label{cap:apendicea}
-
-\lipsum[11-15]
-
-\end{ambienteapendices}
-
-\begin{ambienteanexos}%% Anexos
-
-\chapter{Título do Anexo}\label{cap:anexoa}
-
-\lipsum[21-25]
-
-\end{ambienteanexos}
-
-\chapter*{Agradecimentos}
-
-O(s) autor(es) agradece(m) à Universidade Tecnológica Federal do Paraná pelo apoio recebido para o desenvolvimento do presente trabalho.
-
-\chapter*{Declaração de Responsabilidade}
-
-O(s) autor(es) é(são) o(s) único(s) responsável(eis) pelo material impresso contido neste documento.
 
 %% Fim do documento
 \end{document}
