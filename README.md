@@ -10,7 +10,7 @@ Speech recognition can be used in many fields, including command recognition for
 
 We use 80% of our dataset to train model, 20% dataset to test and measure the accuracy of approaches. During training, we augment data to variety of situations dataset like pitch, shift, stretch, ignore noise,... 
 
-The best results base on F1 score, when we use DTW is 83%, PCA + KNN is 91% and CNN is 89%. We also evaluate independently on own dataset (~ 40 files) from native accent and Vietnamnese accent with DTW is 79%, PCA + KNN is 95% and CNN is 79%.
+The best results base on F1 score, when we use DTW is 83%, PCA + KNN is 91% and CNN is 89%. We also evaluate independently on own dataset (~ 40 files) from native accent and Vietnamnese accent speakers with DTW is 79%, PCA + KNN is 95% and CNN is 79%.
 
 ### Struct of project.
 - [Our report](report/report.pdf)
