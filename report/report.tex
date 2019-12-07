@@ -63,7 +63,7 @@
 
 \begin{ambienteresumo}[Abstract]%% Abstract
 \begin{otherlanguage*}{english}%% Idioma do abstract
-Speech recognition can be used in many fields, including command recognition for voice drone control. The state of the arts methods for spoken word recognition often base on MFCCs (Mel Frequency Cepstral Coefficients) to extract feature of audio. In this report, we present some approaches to classify the 13 drone commands in French. Firstly, We use dynamic time warping (DTW) algorithm. Second approach, using Principal Component Analysis (PCA) to get feature data reduction of MFCC and then apply k-nearest neighbors (KNN) to classify them. A upgrade of this approach, we combine MFCC and Delta Coefficients to get more features about sound and frame signals change. And finally, we use Convolution neural networks (CNN) into MFCCs directly. The dataset is composed of  235 records without noise and 53 records with noise from 13 native speakers. We use 80\% of our dataset to train model, 20\% dataset to test and measure the accuracy of approaches. During training, we augment data to variety of situations dataset like pitch, shift, stretch, ignore noise,\dots The best results base on F1 score, when we use DTW is 83\%, PCA + KNN is 91\% and CNN is 89\%. We also evaluate independently on own dataset (\~ 40 files) from native accent and Vietnamnese accent with DTW is 79\%, PCA + KNN is 95\% and CNN is 79\%.
+Speech recognition can be used in many fields, including command recognition for voice drone control. The state of the arts methods for spoken word recognition often base on MFCCs (Mel Frequency Cepstral Coefficients) to extract feature of audio. In this report, we present some approaches to classify the 13 drone commands in French. Firstly, We use dynamic time warping (DTW) algorithm. Second approach, using Principal Component Analysis (PCA) to get feature data reduction of MFCC and then apply k-nearest neighbors (KNN) to classify them. A upgrade of this approach, we combine MFCC and Delta Coefficients to get more features about sound and frame signals change. And finally, we use Convolution neural networks (CNN) into MFCCs directly. The dataset is composed of  235 records without noise and 53 records with noise from 13 native speakers. We use 80\% of our dataset to train model, 20\% dataset to test and measure the accuracy of approaches. During training, we augment data to variety of situations dataset like pitch, shift, stretch, ignore noise,\dots The best results base on F1 score, when we use DTW is 83\%, PCA + KNN is 91\% and CNN is 89\%. We also evaluate independently on own dataset (39 files) from native accent and Vietnamese accent with DTW is 79\%, PCA + KNN is 95\% and CNN is 79\%.
 
 \smallskip
 
@@ -93,11 +93,11 @@ In the next section will explain about methodology, results, and conclusions. In
 \section{Methodology}\label{sec:met}
 In this section, we will present and explain more detail about the speech recognition process on each approaches.
 
-First of all, we present briefly the dataset and take preprocessing data.
-\subsection{Dataset and preproccesing}
+First of all, we present briefly the dataset and take prepossessing data.
+\subsection{Dataset and prepossessing}
 The dataset we had access to was composed of sets of the 13 instructions spoken by 13 native speakers in different conditions with audio parameters: 16 KHz, mono, 16 bits, .wav format. The total of dataset include 235 records without noise (by 13 males and 5 females) and 53 records (by 4 males) .
 %It can be divided into 2 categories: 4 sets where voices of males with a high level of noise, 13 sets where voices of males with no noise and 5 sets where voices of females with no noise. 
-During record dataset, Speaker often silent before and after speak word. So the audio file usually has silent two sides of main wave as shown Figure \ref{fig:sample_1}. So we need to cut the slient parts of the sample as Figure \ref{fig:sample_2} using trim method in librosa library with threshold to consider as silence is 30.
+During record dataset, Speaker often silent before and after speak word. So the audio file usually has silent two sides of main wave as shown Figure \ref{fig:sample_1}. So we need to cut the silent parts of the sample as Figure \ref{fig:sample_2} using trim method in librosa library with threshold to consider as silence is 30.
 %Each sample is isolated but not reduced to only the instruction, so we need to cut the empty parts of the sample, as shown by the two following figures.
 
 \begin{figure}[H]
@@ -126,7 +126,7 @@ We use 80\% of our dataset to train model, 20\% dataset to test and measure the 
 
 \subsection{Feature extraction}
 
-After data preprocessing, we will need to extract important features of each audio. One of the sate of the art methods is the mel-frequency cepstral coefficients (MFCCs) algorithm. MFCC is a frequency warping method that allows for a better representation of the response the human earing has, since it does not follow a linear scale. It calculates coefficients by performing a Fourier transform, mapping the result to the mel scale, taking the logs of the powers at certain frequencies, taking the discrete cosine transform of the logs and getting the amplitudes of the resulting spectrum. Figure \ref{fig:mfcc} is a sample of 'etadurgence' word. 
+After data prepossessing, we will need to extract important features of each audio. One of the sate of the art methods is the mel-frequency cepstral coefficients (MFCCs) algorithm. MFCC is a frequency warping method that allows for a better representation of the response the human earring has, since it does not follow a linear scale. It calculates coefficients by performing a Fourier transform, mapping the result to the mel scale, taking the logs of the powers at certain frequencies, taking the discrete cosine transform of the logs and getting the amplitudes of the resulting spectrum. Figure \ref{fig:mfcc} is a sample of 'etadurgence' word. 
 
 \begin{figure}[H]
   \centering
@@ -214,7 +214,7 @@ The first part our recognition method uses the dynamic time warping (DTW) algori
 \end{algorithm}
 
 \subsection{PCA and KNN}
-The second approach of our recognition method is to apply the principal component analysis (PCA) on our dataset, before classification with the KNN algorithm. PCA is a method that allows to reduce the size of a set by transforming it into a set of linearly uncorrelated variable. It works by calculating the covariance matrix of the sequence, then by calculating the eigenvalues and eigenvectors of this matrix, choosing a subset of these eigenvectors and projecting the dataset onto a new basis created by the chosen eigenvectors\cite{8538414}. Note that, we need to fix size of all data by padding zeros vector to two slide of each MFCC Figure \ref{fig:mfccpadding} and flatten each MFCC to vector. and Then rescaling our data to a range between -1 and 1, with StandardScaler method from sklearn. 
+The second approach of our recognition method is to apply the principal component analysis (PCA) on our dataset, before classification with the KNN algorithm. PCA is a method that allows to reduce the size of a set by transforming it into a set of linearly uncorrelated variable. It works by calculating the co-variance matrix of the sequence, then by calculating the eigenvalues and eigenvectors of this matrix, choosing a subset of these eigenvectors and projecting the dataset onto a new basis created by the chosen eigenvectors\cite{8538414}. Note that, we need to fix size of all data by padding zeros vector to two slide of each MFCC Figure \ref{fig:mfccpadding} and flatten each MFCC to vector. and Then rescaling our data to a range between -1 and 1, with StandardScaler method from sklearn. 
 
 \begin{figure}[H]
   \centering
@@ -223,7 +223,7 @@ The second approach of our recognition method is to apply the principal componen
   \label{fig:mfccpadding}
 \end{figure}
 
-And the we will classify via classification algorithms like KNN, SVM, Neural networks, \dots  We will perform the K-nearest neighbors (KNN) using KNN method in sklearn librarys. It works by having a training base, on which is placed a test sample. The training base is composed of vectors with each an associated label, the label on these training vectors represents a class. We then check the neighborhood of the test sample, and take its k closest neighbors. These neighbors are then used to classify the test sample, with techniques such as majority voting, or weighted majority voting.
+And the we will classify via classification algorithms like KNN, SVM, Neural networks, \dots  We will perform the K-nearest neighbors (KNN) using KNN method in sklearn library. It works by having a training base, on which is placed a test sample. The training base is composed of vectors with each an associated label, the label on these training vectors represents a class. We then check the neighborhood of the test sample, and take its k closest neighbors. These neighbors are then used to classify the test sample, with techniques such as majority voting, or weighted majority voting.
 
 \begin{figure}[H]
   \centering
@@ -268,7 +268,7 @@ We have implemented Algorithm \ref{euclid} and evaluated by solving exercise TD2
 \end{minipage}
 \end{figure*}
 
-And then, we have evaluated performance of DTW algorithm with the following cases. Firstly, Evaluating influence male/ female voices and we have got so good result as Figure \ref{fig:dtwmalevsfemale}. Secondly, Evaluating influence background noises on recognition (learning set is data without noise and test set is data with noise) and we have got bad result as Figure \ref{fig:dtwnoiseonly}. Thirdly, Evaluating with normal (ramdom noise and without noise) data as Figure \ref{fig:dtwall}. And finally, evaluating ability to new voice as Figure \ref{fig:dtwnewvoice}
+And then, we have evaluated performance of DTW algorithm with the following cases. Firstly, Evaluating influence male/ female voices and we have got so good result as Figure \ref{fig:dtwmalevsfemale}. Secondly, Evaluating influence background noises on recognition (learning set is data without noise and test set is data with noise) and we have got bad result as Figure \ref{fig:dtwnoiseonly}. Thirdly, Evaluating with normal (random noise and without noise) data as Figure \ref{fig:dtwall}. And finally, evaluating ability to new voice as Figure \ref{fig:dtwnewvoice}
 \begin{figure*}
 \centering
 \begin{minipage}[b]{.4\textwidth}
@@ -295,7 +295,7 @@ And then, we have evaluated performance of DTW algorithm with the following case
 \begin{figure}[H]
   \centering
   \includegraphics[width = \columnwidth]{./Figuras/dtwall}
-  \caption{Evaluating DTW algorithm with normal (ramdom noise and without noise) data}
+  \caption{Evaluating DTW algorithm with normal (random noise and without noise) data}
   \label{fig:dtwall}
 \end{figure}
 \end{minipage}\qquad
@@ -324,7 +324,7 @@ And we have got best results on test data is 93\% as Figure \ref{fig:knnall} and
 \begin{figure}[H]
   \centering
   \includegraphics[width = \columnwidth]{./Figuras/knnall}
-  \caption{Evaluating PCA+KNN model normal (ramdom noise and without noise) data}
+  \caption{Evaluating PCA+KNN model normal (random noise and without noise) data}
   \label{fig:knnall}
 \end{figure}
 \end{minipage}\qquad
@@ -339,7 +339,7 @@ And we have got best results on test data is 93\% as Figure \ref{fig:knnall} and
 \end{figure*}
 
 \subsection{CNN}
-We have tried to train Deep Neural network model - CNN. Figure \ref{fig:cnnarch} present architecture CNN model with $14,301$ parameters. And Figure \ref{fig:losscnn} and \ref{fig:accloss} show the loss and accuracy after 6000 epoches.
+We have tried to train Deep Neural network model - CNN. Figure \ref{fig:cnnarch} present architecture CNN model with $14,301$ parameters. And Figure \ref{fig:losscnn} and \ref{fig:acccnn} show the loss and accuracy after 6000 epochs.
 \begin{figure}[H]
   \centering
   \includegraphics[width = 0.7\columnwidth]{./Figuras/cnnarch}
@@ -375,7 +375,7 @@ And we have got good results on test data is 91\% as Figure \ref{fig:cnnall} and
 \begin{figure}[H]
   \centering
   \includegraphics[width = \columnwidth]{./Figuras/cnnall}
-  \caption{Evaluating CNN model normal (ramdom noise and without noise) data}
+  \caption{Evaluating CNN model normal (random noise and without noise) data}
   \label{fig:cnnall}
 \end{figure}
 \end{minipage}\qquad
@@ -390,7 +390,7 @@ And we have got good results on test data is 91\% as Figure \ref{fig:cnnall} and
 \end{figure*}
 
 \section{conclusions}
-The primary objective, we have successfully implemented DTW algorithm, PCA, KNN and CNN methods and get good results. We see that, data augmentation make better accuracy and combining MFCC + del + del2 and PCA + KNN has best results. Although, using DTW on data augmentation is more expensive, I think it's a simple and good result.
+The primary objective, we have successfully implemented DTW algorithm, PCA, KNN and CNN methods and get good results. We see that, data augmentation make better accuracy and combining MFCC + del + del2 and PCA + KNN has best results. Although, using DTW on data augmentation is more expensive, I think it's a simple method and good result.
 
 \printbibliography%% Referências
 
